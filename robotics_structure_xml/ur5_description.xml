@@ -1,0 +1,113 @@
+<mujoco model="ur5">
+  <option iterations="50" timestep="0.001" solver="PGS" gravity="0 0 -9.81" />
+
+  <compiler angle="radian" meshdir="meshes" eulerseq="zyx" autolimits="true" />
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.01" />
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
+    <motor ctrllimited="true" />
+    <equality solref="0.001 2" />
+    <default class="visualgeom">
+      <geom material="visualgeom" condim="1" contype="0" conaffinity="0" />
+    </default>
+  </default>
+
+  <worldbody>
+    <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
+    <light directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
+    <geom name="ground" type="plane" pos="0 0 0" size="100 100 0.001" quat="1 0 0 0" material="matplane" condim="3" conaffinity="15" />
+    <camera name="fixed" pos="0 -3.0 0.5104909999959982" xyaxes="1 0 0 0 0 1" />
+    <camera name="track" mode="trackcom" pos="0 -3.0 0.5104909999959982" xyaxes="1 0 0 0 0 1" />
+    <body name="root" pos="0 0 0.010490999995998267" quat="1 0 0 0">
+      <freejoint name="root" />
+      <site name="imu" size="0.01" pos="0 0 0" />
+      <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+      <body name="shoulder_link" pos="0 0 0.089159">
+        <inertial pos="0 0 0" mass="3.7" diaginertia="0.0102675 0.0102675 0.00666" />
+        <joint name="shoulder_pan_joint" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-150 150" />
+        <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+        <body name="upper_arm_link" pos="0 0.13585 0" quat="0.707107 0 0.707107 0">
+          <inertial pos="0 0 0.28" mass="8.393" diaginertia="0.226891 0.226891 0.0151074" />
+          <joint name="shoulder_lift_joint" pos="0 0 0" axis="0 1 0" range="-6.28319 6.28319" actuatorfrcrange="-150 150" />
+          <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+          <body name="forearm_link" pos="0 -0.1197 0.425">
+            <inertial pos="0 0 0.25" mass="2.275" diaginertia="0.0494433 0.0494433 0.004095" />
+            <joint name="elbow_joint" pos="0 0 0" axis="0 1 0" range="-3.14159 3.14159" actuatorfrcrange="-150 150" />
+            <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+            <body name="wrist_1_link" pos="0 0 0.39225" quat="0.707107 0 0.707107 0">
+              <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="1.219" diaginertia="0.21942 0.111173 0.111173" />
+              <joint name="wrist_1_joint" pos="0 0 0" axis="0 1 0" range="-6.28319 6.28319" actuatorfrcrange="-28 28" />
+              <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+              <body name="wrist_2_link" pos="0 0.093 0">
+                <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="1.219" diaginertia="0.21942 0.111173 0.111173" />
+                <joint name="wrist_2_joint" pos="0 0 0" axis="0 0 1" range="-6.28319 6.28319" actuatorfrcrange="-28 28" />
+                <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+                <body name="wrist_3_link" pos="0 0 0.09465">
+                <body name="gripper" pos="0 0 0.07">
+                      <!-- 以小转角近似对指夹持；范围可根据需要调整 -->
+                      <joint name="gripper_joint" type="hinge" pos="0 0 0" axis="0 1 0" range="-0.35 0.35" damping="0.01"/>
+                      <!-- 可视化几何体（两片指爪的抽象表示） -->
+                      <geom name="gripper_base" type="capsule" fromto="0 0 0  0 0 0.06" size="0.01" rgba="0.2 0.6 1 1" contype="0" conaffinity="0" density="0"/>
+                      <geom name="finger_visual" type="box" pos="0 0 0.065" size="0.01 0.005 0.015" rgba="0.2 0.6 1 1" contype="0" conaffinity="0" density="0"/>
+                      <site name="eef" pos="0 0 0.08" size="0.005" rgba="0 1 0 1"/>
+                    </body>
+                  <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="0.1879" diaginertia="0.033822 0.0171365 0.0171365" />
+                  <joint name="wrist_3_joint" pos="0 0 0" axis="0 1 0" range="-6.28319 6.28319" actuatorfrcrange="-28 28" />
+                  <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                  <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+                  <geom size="0.005 0.005 0.005" pos="0 0.0723 0" quat="0.707107 0 0 0.707107" type="box" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                  <geom type="box" rgba="" size="0.005 0.005 0.005" pos="0 0.0723 0" quat="0.707107 0 0 0.707107" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <asset>
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".0 .0 .0" rgb2=".8 .8 .8" width="100" height="100" />
+    <material name="matplane" reflectance="0." texture="texplane" texrepeat="1 1" texuniform="true" />
+    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+  </asset>
+
+  <actuator>
+    <motor name="shoulder_pan_joint" joint="shoulder_pan_joint" ctrllimited="true" ctrlrange="-150 150" gear="1" />
+    <motor name="shoulder_lift_joint" joint="shoulder_lift_joint" ctrllimited="true" ctrlrange="-150 150" gear="1" />
+    <motor name="elbow_joint" joint="elbow_joint" ctrllimited="true" ctrlrange="-150 150" gear="1" />
+    <motor name="wrist_1_joint" joint="wrist_1_joint" ctrllimited="true" ctrlrange="-28 28" gear="1" />
+    <motor name="wrist_2_joint" joint="wrist_2_joint" ctrllimited="true" ctrlrange="-28 28" gear="1" />
+    <motor name="wrist_3_joint" joint="wrist_3_joint" ctrllimited="true" ctrlrange="-28 28" gear="1" />
+  </actuator>
+
+  <sensor>
+    <actuatorpos name="shoulder_pan_joint_p" actuator="shoulder_pan_joint" />
+    <actuatorvel name="shoulder_pan_joint_v" actuator="shoulder_pan_joint" />
+    <actuatorfrc name="shoulder_pan_joint_f" actuator="shoulder_pan_joint" noise="0.001" />
+    <actuatorpos name="shoulder_lift_joint_p" actuator="shoulder_lift_joint" />
+    <actuatorvel name="shoulder_lift_joint_v" actuator="shoulder_lift_joint" />
+    <actuatorfrc name="shoulder_lift_joint_f" actuator="shoulder_lift_joint" noise="0.001" />
+    <actuatorpos name="elbow_joint_p" actuator="elbow_joint" />
+    <actuatorvel name="elbow_joint_v" actuator="elbow_joint" />
+    <actuatorfrc name="elbow_joint_f" actuator="elbow_joint" noise="0.001" />
+    <actuatorpos name="wrist_1_joint_p" actuator="wrist_1_joint" />
+    <actuatorvel name="wrist_1_joint_v" actuator="wrist_1_joint" />
+    <actuatorfrc name="wrist_1_joint_f" actuator="wrist_1_joint" noise="0.001" />
+    <actuatorpos name="wrist_2_joint_p" actuator="wrist_2_joint" />
+    <actuatorvel name="wrist_2_joint_v" actuator="wrist_2_joint" />
+    <actuatorfrc name="wrist_2_joint_f" actuator="wrist_2_joint" noise="0.001" />
+    <actuatorpos name="wrist_3_joint_p" actuator="wrist_3_joint" />
+    <actuatorvel name="wrist_3_joint_v" actuator="wrist_3_joint" />
+    <actuatorfrc name="wrist_3_joint_f" actuator="wrist_3_joint" noise="0.001" />
+    <framequat name="orientation" objtype="site" noise="0.001" objname="imu" />
+    <gyro name="angular-velocity" site="imu" noise="0.005" cutoff="34.9" />
+  </sensor>
+</mujoco>

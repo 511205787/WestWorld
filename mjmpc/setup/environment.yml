@@ -1,0 +1,31 @@
+name: mjmpc
+channels:
+  - conda-forge
+dependencies:
+  - ffmpeg
+  - numpy==1.17.2
+  - pytest
+  - colorlog
+  - pandas
+  - tabulate
+  - pip
+  - sk-video
+  - pip:
+    - argcomplete
+    - click
+    - cloudpickle
+    - gym>=0.13
+    - imageio-ffmpeg
+    - mujoco-py<2.1,>=2.0
+    - pyyaml
+    - scipy
+    - tensorboard
+    - torch
+    - torchvision
+    - tqdm==4.32.1
+    - wheel
+    
+
+
+
+

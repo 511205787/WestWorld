@@ -1,0 +1,95 @@
+<mujoco model="finger">
+  <include file="./common/visual.xml"/>
+  <include file="./common/skybox.xml"/>
+  <include file="./common/materials.xml"/>
+
+  <option timestep="0.01" cone="elliptic" iterations="200">
+    <flag gravity="disable"/>
+  </option>
+
+  <default>
+    <geom  solimp="0 0.9 0.01" solref=".02 1"/>
+    <joint type="hinge" axis="0 -1 0"/>
+    <motor ctrllimited="true" ctrlrange="-1 1"/>
+    <default class="finger">
+      <joint damping="2.5" limited="true"/>
+      <site  type="ellipsoid" size=".025 .03 .025" material="site" group="3"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <light  name="light" directional="true" diffuse=".6 .6 .6" pos="0 0 2" specular=".3 .3 .3"/>
+    <geom   name="ground" type="plane" pos="0 0 0" size=".6 .2 10" material="grid"/>
+    <camera name="cam0" pos="0 -1 .8" xyaxes="1 0 0 0 1 2"/>
+    <camera name="cam1" pos="0 -1 .4" xyaxes="1 0 0 0 0 1" />
+
+    <!-- ====================== finger (obj_id=0) ====================== -->
+    <body name="proximal" pos="-.2 0 .4" childclass="finger">
+      <geom  name="proximal_decoration" type="cylinder" fromto="0 -.033 0 0 .033 0" size=".034" material="decoration"/>
+      <joint name="proximal" range="-110 110" ref="-90"/>
+      <geom  name="proximal" type="capsule" material="self" size=".03" fromto="0 0 0 0 0 -.17"/>
+
+      <body name="distal" pos="0 0 -.18" childclass="finger">
+        <joint name="distal" range="-110 110"/>
+        <geom  name="distal" type="capsule" size=".028" material="self" fromto="0 0 0 0 0 -.16" contype="0" conaffinity="0"/>
+        <geom  name="fingertip" type="capsule" size=".03" material="effector" fromto="0 0 -.13 0 0 -.161"/>
+
+        <!-- 触点升级为 body：便于 body-level PE；体内保留同名 site 供 touch / framepos 读取 -->
+        <body name="touchtop" pos=".01 0 -.17">
+          <geom name="touchtop_geom" type="sphere" size=".003" rgba="0.8 0.2 0.2 0.3" contype="0" conaffinity="0"/>
+          <site name="touchtop" pos="0 0 0"/>
+        </body>
+        <body name="touchbottom" pos="-.01 0 -.17">
+          <geom name="touchbottom_geom" type="sphere" size=".003" rgba="0.2 0.2 0.8 0.3" contype="0" conaffinity="0"/>
+          <site name="touchbottom" pos="0 0 0"/>
+        </body>
+      </body>
+    </body>
+
+    <!-- ====================== spinner (obj_id=1) ===================== -->
+    <body name="spinner" pos=".2 0 .4">
+      <joint name="hinge" frictionloss=".1" damping=".5"/>
+      <geom  name="cap1" type="capsule" size=".04 .09" material="self" pos=".02 0 0"/>
+      <geom  name="cap2" type="capsule" size=".04 .09" material="self" pos="-.02 0 0"/>
+      <site  name="tip" type="sphere" size=".02" pos="0 0 .13" material="target"/>
+      <geom  name="spinner_decoration" type="cylinder" fromto="0 -.045 0 0 .045 0" size=".02" material="decoration"/>
+
+      <!-- target 作为 spinner 的子 body（保持 2 个对象）；体内留同名 site 供观测/距离计算 -->
+      <body name="target" pos="0 0 0.15">
+        <!-- Easy/Hard 通过 size 调整难度：如 easy≈0.07、hard≈0.03（可按需要改） -->
+        <geom name="target_geom" type="sphere" size="0.07" material="target" group="4"/>
+        <site name="target" pos="0 0 0" type="sphere" size="0.001"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="proximal" joint="proximal" gear="30"/>
+    <motor name="distal"   joint="distal"   gear="15"/>
+  </actuator>
+
+  <!-- 观测传感器：上层将这些读数拼成 DMC Finger-Turn 的键（position/velocity/touch/target_position/dist_to_target） -->
+  <sensor>
+    <!-- finger 关节角 / 角速度 -->
+    <jointpos name="proximal"          joint="proximal"/>
+    <jointpos name="distal"            joint="distal"/>
+    <jointvel name="proximal_velocity" joint="proximal"/>
+    <jointvel name="distal_velocity"   joint="distal"/>
+
+    <!-- spinner 角速度（角度可由其他量推断或另加 jointpos） -->
+    <jointvel name="hinge_velocity"    joint="hinge"/>
+
+    <!-- tip / target / spinner 世界坐标：用于 target_position 与 dist_to_target 计算 -->
+    <framepos name="tip"     objtype="site"  objname="tip"/>
+    <framepos name="target"  objtype="site"  objname="target"/>
+    <framepos name="spinner" objtype="xbody" objname="spinner"/>
+
+    <!-- 触觉（touch(2)）：仍以 site 为终端，稳定可靠 -->
+    <touch    name="touchtop"    site="touchtop"/>
+    <touch    name="touchbottom" site="touchbottom"/>
+
+    <!-- 可选：触点世界坐标（调试用） -->
+    <framepos name="touchtop_pos"    objtype="site" objname="touchtop"/>
+    <framepos name="touchbottom_pos" objtype="site" objname="touchbottom"/>
+  </sensor>
+</mujoco>

@@ -1,0 +1,146 @@
+<mujoco model="jaco_arm_with_hand">
+  <compiler angle="radian" meshdir="meshes_decimated/"/>
+  <include file="common.xml"/>
+
+  <!-- ===== 省略：与原 jaco_arm.xml 相同的 asset/default/worldbody 到 b_6 之前的内容 ===== -->
+
+  <worldbody>
+    <body name="b_base">
+      <geom name="base" mesh="base" mass="0.718306"/>
+      <body name="b_1" pos="0 0 0.15675" quat="0 0 1 0">
+        <joint name="joint_1" class="large_joint"/>
+        <geom name="link_1" mesh="shoulder" mass="0.643205"/>
+        <geom name="ring_1" class="large_ring"/>
+        <body name="b_2" pos="0 0.0016 -0.11875" quat="0 0 -0.707107 0.707107">
+          <joint name="joint_2" class="large_joint" limited="true" range="0.820305 5.462881"/>
+          <geom name="link_2" mesh="arm" mass="1.16915"/>
+          <geom name="ring_2" class="large_ring"/>
+          <body name="b_3" pos="0 -0.41 0" quat="0 0 1 0">
+            <joint name="joint_3" class="large_joint" limited="true" range="0.331613 5.951573"/>
+            <geom name="link_3" mesh="forearm" mass="0.673443"/>
+            <geom name="ring_3" class="large_ring"/>
+            <body name="b_4" pos="0 0.2073 -0.0114" quat="0 0 -0.707107 0.707107">
+              <joint name="joint_4" class="small_joint"/>
+              <geom name="link_4" mesh="wrist" mass="0.221432"/>
+              <geom name="ring_4" class="small_ring"/>
+              <body name="b_5" pos="0 -0.03703 -0.06414" quat="0 0 0.5 0.866025">
+                <joint name="joint_5" class="small_joint"/>
+                <geom name="link_5" mesh="wrist" mass="0.221432"/>
+                <geom name="ring_5" class="small_ring"/>
+                <body name="b_6" pos="0 -0.03703 -0.06414" quat="0 0 0.5 0.866025">
+                  <joint name="joint_6" class="small_joint"/>
+                  <geom name="ring_6" class="small_ring" mass="1e-9"/>
+                  <!-- Wrist mount site for attaching tools/gripper -->
+                  <site name="wristsite" quat="0. 0.70710678118 0.70710678118 0."/>
+                  
+                  <!-- ======== Integrated 3-finger hand (was separate jaco_hand) ======== -->
+                  <body name="hand" quat="0. 0.70710678118 0.70710678118 0.">
+                    <!-- grasp reference sites -->
+                    <site name="gripsite"  pos="0 -0.0001 -0.159" quat="0 0.70710678118 0.70710678118 0"/>
+                    <body name="pinch" pos="0 0 0">
+                      <site name="pinchsite" pos="0.015 0.0024 -0.193"
+                            quat="0 0.70710678118 0.70710678118 0" size="0.005" type="sphere"/>
+                    </body>
+                    <!-- palm meshes (可按需替换为 hand_3finger_main/insert 的 mesh) -->
+                    <geom name="hand_main"   type="box" size="0.02 0.03 0.02" material="light_gray" mass="0.3"/>
+                    <geom name="hand_insert" type="box" size="0.02 0.03 0.001" material="light_gray" mass="0"/>
+
+                    <!-- finger #1 -->
+                    <body name="b_finger_1" pos="0.00279 0.03126 -0.11467"
+                          quat="0.24396 -0.63159 -0.38818 0.62521">
+                      <joint name="finger_1" type="hinge" limited="true" range="0.15 1.35"
+                             frictionloss="0.1" armature="0.1" damping="0.75"/>
+                      <geom name="finger_knuckle_1" type="capsule" fromto="0 0 0  0.04 0 0" size="0.006"/>
+                      <body name="b_finger_tip_1" pos="0.044 -0.003 0">
+                        <geom name="finger_tip_1" type="capsule" fromto="0 0 0  0.03 0 0" size="0.005"/>
+                      </body>
+                    </body>
+
+                    <!-- finger #2 -->
+                    <body name="b_finger_2" pos="-0.02226 -0.02707 -0.11482"
+                          quat="0.601679 -0.254671 0.659653 -0.37146">
+                      <joint name="finger_2" type="hinge" limited="true" range="0.15 1.35"
+                             frictionloss="0.1" armature="0.1" damping="0.75"/>
+                      <geom name="finger_knuckle_2" type="capsule" fromto="0 0 0  0.04 0 0" size="0.006"/>
+                      <body name="b_finger_tip_2" pos="0.044 -0.003 0">
+                        <geom name="finger_tip_2" type="capsule" fromto="0 0 0  0.03 0 0" size="0.005"/>
+                      </body>
+                    </body>
+
+                    <!-- finger #3 -->
+                    <body name="b_finger_3" pos="0.02226 -0.02707 -0.11482"
+                          quat="0.659653 -0.37146 0.601679 -0.254671">
+                      <joint name="finger_3" type="hinge" limited="true" range="0.15 1.35"
+                             frictionloss="0.1" armature="0.1" damping="0.75"/>
+                      <geom name="finger_knuckle_3" type="capsule" fromto="0 0 0  0.04 0 0" size="0.006"/>
+                      <body name="b_finger_tip_3" pos="0.044 -0.003 0">
+                        <geom name="finger_tip_3" type="capsule" fromto="0 0 0  0.03 0 0" size="0.005"/>
+                      </body>
+                    </body>
+                  </body>
+                  <!-- ======== end hand ======== -->
+
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- 6 arm DoFs -->
+    <motor name="joint_1" joint="joint_1" ctrllimited="true" ctrlrange="-0.62831853 0.62831853"/>
+    <motor name="joint_2" joint="joint_2" ctrllimited="true" ctrlrange="-0.62831853 0.62831853"/>
+    <motor name="joint_3" joint="joint_3" ctrllimited="true" ctrlrange="-0.62831853 0.62831853"/>
+    <motor name="joint_4" joint="joint_4" ctrllimited="true" ctrlrange="-0.83775804 0.83775804"/>
+    <motor name="joint_5" joint="joint_5" ctrllimited="true" ctrlrange="-0.83775804 0.83775804"/>
+    <motor name="joint_6" joint="joint_6" ctrllimited="true" ctrlrange="-0.83775804 0.83775804"/>
+    <!-- 3 finger DoFs -->
+    <motor name="finger_1" joint="finger_1" ctrllimited="true" ctrlrange="-5 5"/>
+    <motor name="finger_2" joint="finger_2" ctrllimited="true" ctrlrange="-5 5"/>
+    <motor name="finger_3" joint="finger_3" ctrllimited="true" ctrlrange="-5 5"/>
+  </actuator>
+
+  <sensor>
+    <!-- arm joint pos/vel -->
+    <jointpos name="arm_pos_1" joint="joint_1"/>
+    <jointpos name="arm_pos_2" joint="joint_2"/>
+    <jointpos name="arm_pos_3" joint="joint_3"/>
+    <jointpos name="arm_pos_4" joint="joint_4"/>
+    <jointpos name="arm_pos_5" joint="joint_5"/>
+    <jointpos name="arm_pos_6" joint="joint_6"/>
+
+    <jointvel name="arm_vel_1" joint="joint_1"/>
+    <jointvel name="arm_vel_2" joint="joint_2"/>
+    <jointvel name="arm_vel_3" joint="joint_3"/>
+    <jointvel name="arm_vel_4" joint="joint_4"/>
+    <jointvel name="arm_vel_5" joint="joint_5"/>
+    <jointvel name="arm_vel_6" joint="joint_6"/>
+
+    <!-- hand joint pos/vel -->
+    <jointpos name="hand_pos_1" joint="finger_1"/>
+    <jointpos name="hand_pos_2" joint="finger_2"/>
+    <jointpos name="hand_pos_3" joint="finger_3"/>
+
+    <jointvel name="hand_vel_1" joint="finger_1"/>
+    <jointvel name="hand_vel_2" joint="finger_2"/>
+    <jointvel name="hand_vel_3" joint="finger_3"/>
+
+    <!-- pinch site pose -->
+    <framepos name="pinch_site_pos" objtype="site" objname="pinchsite"/>
+    <framerelative name="pinch_site_rmat" objtype="site" objname="pinchsite"/>
+
+    <!-- base free-joint kinematics（如有需要，可改为 subtreelinvel/gyro 等） -->
+    <subtreelinvel name="linear_velocity" body="b_base"/>
+    <gyro          name="angular_velocity" site="wristsite"/>
+    <framepos      name="base_pos" objtype="xbody" objname="b_base"/>
+    <framequat     name="base_quat" objtype="xbody" objname="b_base"/>
+  </sensor>
+
+  <contact>
+    <exclude body1="b_base" body2="b_1"/>
+    <!-- 如需避免手掌与手指的自碰，可按需添加 exclude -->
+  </contact>
+</mujoco>

@@ -1,0 +1,3005 @@
+a1_mj_description:
+  xml: robotics_structure_xml/a1_mj_description.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 13
+    nodes:
+    - body: trunk
+      idx: 0
+      pre: 0
+      inlcrs: 12
+      postlcrs: 12
+    - body: FR_hip
+      idx: 1
+      pre: 1
+      inlcrs: 9
+      postlcrs: 11
+    - body: FR_thigh
+      idx: 2
+      pre: 2
+      inlcrs: 11
+      postlcrs: 10
+    - body: FR_calf
+      idx: 3
+      pre: 3
+      inlcrs: 10
+      postlcrs: 9
+    - body: FL_hip
+      idx: 4
+      pre: 4
+      inlcrs: 6
+      postlcrs: 8
+    - body: FL_thigh
+      idx: 5
+      pre: 5
+      inlcrs: 8
+      postlcrs: 7
+    - body: FL_calf
+      idx: 6
+      pre: 6
+      inlcrs: 7
+      postlcrs: 6
+    - body: RR_hip
+      idx: 7
+      pre: 7
+      inlcrs: 3
+      postlcrs: 5
+    - body: RR_thigh
+      idx: 8
+      pre: 8
+      inlcrs: 5
+      postlcrs: 4
+    - body: RR_calf
+      idx: 9
+      pre: 9
+      inlcrs: 4
+      postlcrs: 3
+    - body: RL_hip
+      idx: 10
+      pre: 10
+      inlcrs: 2
+      postlcrs: 2
+    - body: RL_thigh
+      idx: 11
+      pre: 11
+      inlcrs: 1
+      postlcrs: 1
+    - body: RL_calf
+      idx: 12
+      pre: 12
+      inlcrs: 0
+      postlcrs: 0
+acrobot:
+  xml: robotics_structure_xml/acrobot.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: upper_arm
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: lower_arm
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+ball_in_cup:
+  xml: robotics_structure_xml/ball_in_cup.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 1
+    nodes:
+    - body: cup
+      idx: 0
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: ball
+      idx: 1
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+cartpole:
+  xml: robotics_structure_xml/cartpole.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: cart
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: pole_1
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+cassie:
+  xml: robotics_structure_xml/cassie.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 15
+    nodes:
+    - body: root
+      idx: 0
+      pre: 0
+      inlcrs: 14
+      postlcrs: 14
+    - body: left_pelvis_rotation
+      idx: 1
+      pre: 1
+      inlcrs: 7
+      postlcrs: 13
+    - body: left_hip
+      idx: 2
+      pre: 2
+      inlcrs: 13
+      postlcrs: 12
+    - body: left_thigh
+      idx: 3
+      pre: 3
+      inlcrs: 12
+      postlcrs: 11
+    - body: left_knee
+      idx: 4
+      pre: 4
+      inlcrs: 11
+      postlcrs: 10
+    - body: left_shin
+      idx: 5
+      pre: 5
+      inlcrs: 10
+      postlcrs: 9
+    - body: left_tarsus
+      idx: 6
+      pre: 6
+      inlcrs: 9
+      postlcrs: 8
+    - body: left_toe
+      idx: 7
+      pre: 7
+      inlcrs: 8
+      postlcrs: 7
+    - body: right_pelvis_rotation
+      idx: 8
+      pre: 8
+      inlcrs: 6
+      postlcrs: 6
+    - body: right_hip
+      idx: 9
+      pre: 9
+      inlcrs: 5
+      postlcrs: 5
+    - body: right_thigh
+      idx: 10
+      pre: 10
+      inlcrs: 4
+      postlcrs: 4
+    - body: right_knee
+      idx: 11
+      pre: 11
+      inlcrs: 3
+      postlcrs: 3
+    - body: right_shin
+      idx: 12
+      pre: 12
+      inlcrs: 2
+      postlcrs: 2
+    - body: right_tarsus
+      idx: 13
+      pre: 13
+      inlcrs: 1
+      postlcrs: 1
+    - body: right_toe
+      idx: 14
+      pre: 14
+      inlcrs: 0
+      postlcrs: 0
+cheetah:
+  xml: robotics_structure_xml/cheetah.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 5
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: bfoot
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 3
+    - body: fthigh
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 2
+    - body: fshin
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: ffoot
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+cheetah_2_back:
+  xml: robotics_structure_xml/cheetah_2_back.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+cheetah_2_front:
+  xml: robotics_structure_xml/cheetah_2_front.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: fthigh
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+cheetah_3_back:
+  xml: robotics_structure_xml/cheetah_3_back.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+cheetah_3_balanced:
+  xml: robotics_structure_xml/cheetah_3_balanced.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: fthigh
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+cheetah_3_front:
+  xml: robotics_structure_xml/cheetah_3_front.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: fthigh
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: fshin
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+cheetah_4_allback:
+  xml: robotics_structure_xml/cheetah_4_allback.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 2
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 1
+      postlcrs: 1
+    - body: bfoot
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+cheetah_4_allfront:
+  xml: robotics_structure_xml/cheetah_4_allfront.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: fthigh
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 2
+    - body: fshin
+      idx: 2
+      pre: 2
+      inlcrs: 1
+      postlcrs: 1
+    - body: ffoot
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+cheetah_4_back:
+  xml: robotics_structure_xml/cheetah_4_back.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 2
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 2
+      postlcrs: 1
+    - body: fthigh
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+cheetah_4_front:
+  xml: robotics_structure_xml/cheetah_4_front.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 2
+    - body: fthigh
+      idx: 2
+      pre: 2
+      inlcrs: 1
+      postlcrs: 1
+    - body: fshin
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+cheetah_5_back:
+  xml: robotics_structure_xml/cheetah_5_back.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 3
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 3
+      postlcrs: 2
+    - body: bfoot
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 1
+    - body: fthigh
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+cheetah_5_balanced:
+  xml: robotics_structure_xml/cheetah_5_balanced.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 3
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 3
+      postlcrs: 2
+    - body: fthigh
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: fshin
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+cheetah_5_front:
+  xml: robotics_structure_xml/cheetah_5_front.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 3
+    - body: fthigh
+      idx: 2
+      pre: 2
+      inlcrs: 2
+      postlcrs: 2
+    - body: fshin
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: ffoot
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+cheetah_6_back:
+  xml: robotics_structure_xml/cheetah_6_back.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 6
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 5
+      postlcrs: 5
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 4
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 4
+      postlcrs: 3
+    - body: bfoot
+      idx: 3
+      pre: 3
+      inlcrs: 3
+      postlcrs: 2
+    - body: fthigh
+      idx: 4
+      pre: 4
+      inlcrs: 1
+      postlcrs: 1
+    - body: fshin
+      idx: 5
+      pre: 5
+      inlcrs: 0
+      postlcrs: 0
+cheetah_6_front:
+  xml: robotics_structure_xml/cheetah_6_front.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 6
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 5
+      postlcrs: 5
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 4
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 4
+      postlcrs: 3
+    - body: fthigh
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 2
+    - body: fshin
+      idx: 4
+      pre: 4
+      inlcrs: 1
+      postlcrs: 1
+    - body: ffoot
+      idx: 5
+      pre: 5
+      inlcrs: 0
+      postlcrs: 0
+fanuc_m710ic_description:
+  xml: robotics_structure_xml/fanuc_m710ic_description.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 8
+    nodes:
+    - body: root
+      idx: 0
+      pre: 0
+      inlcrs: 7
+      postlcrs: 7
+    - body: link_1
+      idx: 1
+      pre: 1
+      inlcrs: 6
+      postlcrs: 6
+    - body: link_2
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 5
+    - body: link_3
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 4
+    - body: link_4
+      idx: 4
+      pre: 4
+      inlcrs: 3
+      postlcrs: 3
+    - body: link_5
+      idx: 5
+      pre: 5
+      inlcrs: 2
+      postlcrs: 2
+    - body: link_6
+      idx: 6
+      pre: 6
+      inlcrs: 1
+      postlcrs: 1
+    - body: gripper
+      idx: 7
+      pre: 7
+      inlcrs: 0
+      postlcrs: 0
+finger:
+  xml: robotics_structure_xml/finger.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: proximal
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: distal
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: spinner
+      idx: 2
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+finger_turn_bodies:
+  xml: robotics_structure_xml/finger_turn_bodies.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: proximal
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: distal
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 2
+    - body: touchtop
+      idx: 2
+      pre: 2
+      inlcrs: 1
+      postlcrs: 1
+    - body: touchbottom
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 2
+    nodes:
+    - body: spinner
+      idx: 4
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: target
+      idx: 5
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+fish:
+  xml: robotics_structure_xml/fish.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: tail1
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 3
+    - body: tail2
+      idx: 2
+      pre: 2
+      inlcrs: 3
+      postlcrs: 2
+    - body: finright
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: finleft
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+fish_swim:
+  xml: robotics_structure_xml/fish_swim.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: tail1
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 3
+    - body: tail2
+      idx: 2
+      pre: 2
+      inlcrs: 3
+      postlcrs: 2
+    - body: finright
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: finleft
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: target
+      idx: 5
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+go1_mppi:
+  xml: robotics_structure_xml/go1_mppi.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 13
+    nodes:
+    - body: trunk
+      idx: 0
+      pre: 0
+      inlcrs: 12
+      postlcrs: 12
+    - body: FR_hip
+      idx: 1
+      pre: 1
+      inlcrs: 9
+      postlcrs: 11
+    - body: FR_thigh
+      idx: 2
+      pre: 2
+      inlcrs: 11
+      postlcrs: 10
+    - body: FR_calf
+      idx: 3
+      pre: 3
+      inlcrs: 10
+      postlcrs: 9
+    - body: FL_hip
+      idx: 4
+      pre: 4
+      inlcrs: 6
+      postlcrs: 8
+    - body: FL_thigh
+      idx: 5
+      pre: 5
+      inlcrs: 8
+      postlcrs: 7
+    - body: FL_calf
+      idx: 6
+      pre: 6
+      inlcrs: 7
+      postlcrs: 6
+    - body: RR_hip
+      idx: 7
+      pre: 7
+      inlcrs: 3
+      postlcrs: 5
+    - body: RR_thigh
+      idx: 8
+      pre: 8
+      inlcrs: 5
+      postlcrs: 4
+    - body: RR_calf
+      idx: 9
+      pre: 9
+      inlcrs: 4
+      postlcrs: 3
+    - body: RL_hip
+      idx: 10
+      pre: 10
+      inlcrs: 2
+      postlcrs: 2
+    - body: RL_thigh
+      idx: 11
+      pre: 11
+      inlcrs: 1
+      postlcrs: 1
+    - body: RL_calf
+      idx: 12
+      pre: 12
+      inlcrs: 0
+      postlcrs: 0
+go2_mppi:
+  xml: robotics_structure_xml/go2_mppi.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 13
+    nodes:
+    - body: base_link
+      idx: 0
+      pre: 0
+      inlcrs: 12
+      postlcrs: 12
+    - body: FL_hip
+      idx: 1
+      pre: 1
+      inlcrs: 9
+      postlcrs: 11
+    - body: FL_thigh
+      idx: 2
+      pre: 2
+      inlcrs: 11
+      postlcrs: 10
+    - body: FL_calf
+      idx: 3
+      pre: 3
+      inlcrs: 10
+      postlcrs: 9
+    - body: FR_hip
+      idx: 4
+      pre: 4
+      inlcrs: 6
+      postlcrs: 8
+    - body: FR_thigh
+      idx: 5
+      pre: 5
+      inlcrs: 8
+      postlcrs: 7
+    - body: FR_calf
+      idx: 6
+      pre: 6
+      inlcrs: 7
+      postlcrs: 6
+    - body: RL_hip
+      idx: 7
+      pre: 7
+      inlcrs: 3
+      postlcrs: 5
+    - body: RL_thigh
+      idx: 8
+      pre: 8
+      inlcrs: 5
+      postlcrs: 4
+    - body: RL_calf
+      idx: 9
+      pre: 9
+      inlcrs: 4
+      postlcrs: 3
+    - body: RR_hip
+      idx: 10
+      pre: 10
+      inlcrs: 2
+      postlcrs: 2
+    - body: RR_thigh
+      idx: 11
+      pre: 11
+      inlcrs: 1
+      postlcrs: 1
+    - body: RR_calf
+      idx: 12
+      pre: 12
+      inlcrs: 0
+      postlcrs: 0
+half_cheetah:
+  xml: robotics_structure_xml/half_cheetah.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: bthigh
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 5
+    - body: bshin
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: bfoot
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 3
+    - body: fthigh
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 2
+    - body: fshin
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: ffoot
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+hopper:
+  xml: robotics_structure_xml/hopper.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: pelvis
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 3
+    - body: thigh
+      idx: 2
+      pre: 2
+      inlcrs: 2
+      postlcrs: 2
+    - body: calf
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: foot
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+hopper_3:
+  xml: robotics_structure_xml/hopper_3.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: thigh
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: foot
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+hopper_5:
+  xml: robotics_structure_xml/hopper_5.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: thigh
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 3
+    - body: leg
+      idx: 2
+      pre: 2
+      inlcrs: 2
+      postlcrs: 2
+    - body: lower_leg
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: foot
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+hopper_gym:
+  xml: robotics_structure_xml/hopper_gym.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: thigh
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 2
+    - body: leg
+      idx: 2
+      pre: 2
+      inlcrs: 1
+      postlcrs: 1
+    - body: foot
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+humanoid:
+  xml: robotics_structure_xml/humanoid.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 16
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 15
+      postlcrs: 15
+    - body: head
+      idx: 1
+      pre: 1
+      inlcrs: 14
+      postlcrs: 14
+    - body: lower_waist
+      idx: 2
+      pre: 2
+      inlcrs: 6
+      postlcrs: 13
+    - body: pelvis
+      idx: 3
+      pre: 3
+      inlcrs: 13
+      postlcrs: 12
+    - body: right_thigh
+      idx: 4
+      pre: 4
+      inlcrs: 10
+      postlcrs: 11
+    - body: right_shin
+      idx: 5
+      pre: 5
+      inlcrs: 12
+      postlcrs: 10
+    - body: right_foot
+      idx: 6
+      pre: 6
+      inlcrs: 11
+      postlcrs: 9
+    - body: left_thigh
+      idx: 7
+      pre: 7
+      inlcrs: 9
+      postlcrs: 8
+    - body: left_shin
+      idx: 8
+      pre: 8
+      inlcrs: 8
+      postlcrs: 7
+    - body: left_foot
+      idx: 9
+      pre: 9
+      inlcrs: 7
+      postlcrs: 6
+    - body: right_upper_arm
+      idx: 10
+      pre: 10
+      inlcrs: 3
+      postlcrs: 5
+    - body: right_lower_arm
+      idx: 11
+      pre: 11
+      inlcrs: 5
+      postlcrs: 4
+    - body: right_hand
+      idx: 12
+      pre: 12
+      inlcrs: 4
+      postlcrs: 3
+    - body: left_upper_arm
+      idx: 13
+      pre: 13
+      inlcrs: 2
+      postlcrs: 2
+    - body: left_lower_arm
+      idx: 14
+      pre: 14
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_hand
+      idx: 15
+      pre: 15
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_7_left_arm:
+  xml: robotics_structure_xml/humanoid_2d_7_left_arm.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 4
+      postlcrs: 5
+    - body: right_shin
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: left_thigh
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 3
+    - body: left_shin
+      idx: 4
+      pre: 4
+      inlcrs: 3
+      postlcrs: 2
+    - body: right_upper_arm
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: right_lower_arm
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_7_left_leg:
+  xml: robotics_structure_xml/humanoid_2d_7_left_leg.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 4
+      postlcrs: 5
+    - body: right_shin
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: right_upper_arm
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 3
+    - body: right_lower_arm
+      idx: 4
+      pre: 4
+      inlcrs: 3
+      postlcrs: 2
+    - body: left_upper_arm
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_lower_arm
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_7_lower_arms:
+  xml: robotics_structure_xml/humanoid_2d_7_lower_arms.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 4
+      postlcrs: 5
+    - body: right_shin
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: left_thigh
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 3
+    - body: left_shin
+      idx: 4
+      pre: 4
+      inlcrs: 3
+      postlcrs: 2
+    - body: right_upper_arm
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_upper_arm
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_7_right_arm:
+  xml: robotics_structure_xml/humanoid_2d_7_right_arm.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 4
+      postlcrs: 5
+    - body: right_shin
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: left_thigh
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 3
+    - body: left_shin
+      idx: 4
+      pre: 4
+      inlcrs: 3
+      postlcrs: 2
+    - body: left_upper_arm
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_lower_arm
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_7_right_leg:
+  xml: robotics_structure_xml/humanoid_2d_7_right_leg.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: left_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 4
+      postlcrs: 5
+    - body: left_shin
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: right_upper_arm
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 3
+    - body: right_lower_arm
+      idx: 4
+      pre: 4
+      inlcrs: 3
+      postlcrs: 2
+    - body: left_upper_arm
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_lower_arm
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_8_left_knee:
+  xml: robotics_structure_xml/humanoid_2d_8_left_knee.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 8
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 7
+      postlcrs: 7
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 5
+      postlcrs: 6
+    - body: right_shin
+      idx: 2
+      pre: 2
+      inlcrs: 6
+      postlcrs: 5
+    - body: left_thigh
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 4
+    - body: right_upper_arm
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 3
+    - body: right_lower_arm
+      idx: 5
+      pre: 5
+      inlcrs: 3
+      postlcrs: 2
+    - body: left_upper_arm
+      idx: 6
+      pre: 6
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_lower_arm
+      idx: 7
+      pre: 7
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_8_right_knee:
+  xml: robotics_structure_xml/humanoid_2d_8_right_knee.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 8
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 7
+      postlcrs: 7
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 6
+      postlcrs: 6
+    - body: left_thigh
+      idx: 2
+      pre: 2
+      inlcrs: 4
+      postlcrs: 5
+    - body: left_shin
+      idx: 3
+      pre: 3
+      inlcrs: 5
+      postlcrs: 4
+    - body: right_upper_arm
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 3
+    - body: right_lower_arm
+      idx: 5
+      pre: 5
+      inlcrs: 3
+      postlcrs: 2
+    - body: left_upper_arm
+      idx: 6
+      pre: 6
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_lower_arm
+      idx: 7
+      pre: 7
+      inlcrs: 0
+      postlcrs: 0
+humanoid_2d_9_full:
+  xml: robotics_structure_xml/humanoid_2d_9_full.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 9
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 8
+      postlcrs: 8
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 6
+      postlcrs: 7
+    - body: right_shin
+      idx: 2
+      pre: 2
+      inlcrs: 7
+      postlcrs: 6
+    - body: left_thigh
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 5
+    - body: left_shin
+      idx: 4
+      pre: 4
+      inlcrs: 5
+      postlcrs: 4
+    - body: right_upper_arm
+      idx: 5
+      pre: 5
+      inlcrs: 2
+      postlcrs: 3
+    - body: right_lower_arm
+      idx: 6
+      pre: 6
+      inlcrs: 3
+      postlcrs: 2
+    - body: left_upper_arm
+      idx: 7
+      pre: 7
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_lower_arm
+      idx: 8
+      pre: 8
+      inlcrs: 0
+      postlcrs: 0
+humanoid_CMU:
+  xml: robotics_structure_xml/humanoid_CMU.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 31
+    nodes:
+    - body: root
+      idx: 0
+      pre: 0
+      inlcrs: 30
+      postlcrs: 30
+    - body: lhipjoint
+      idx: 1
+      pre: 1
+      inlcrs: 25
+      postlcrs: 29
+    - body: lfemur
+      idx: 2
+      pre: 2
+      inlcrs: 29
+      postlcrs: 28
+    - body: ltibia
+      idx: 3
+      pre: 3
+      inlcrs: 28
+      postlcrs: 27
+    - body: lfoot
+      idx: 4
+      pre: 4
+      inlcrs: 27
+      postlcrs: 26
+    - body: ltoes
+      idx: 5
+      pre: 5
+      inlcrs: 26
+      postlcrs: 25
+    - body: rhipjoint
+      idx: 6
+      pre: 6
+      inlcrs: 20
+      postlcrs: 24
+    - body: rfemur
+      idx: 7
+      pre: 7
+      inlcrs: 24
+      postlcrs: 23
+    - body: rtibia
+      idx: 8
+      pre: 8
+      inlcrs: 23
+      postlcrs: 22
+    - body: rfoot
+      idx: 9
+      pre: 9
+      inlcrs: 22
+      postlcrs: 21
+    - body: rtoes
+      idx: 10
+      pre: 10
+      inlcrs: 21
+      postlcrs: 20
+    - body: lowerback
+      idx: 11
+      pre: 11
+      inlcrs: 19
+      postlcrs: 19
+    - body: upperback
+      idx: 12
+      pre: 12
+      inlcrs: 18
+      postlcrs: 18
+    - body: thorax
+      idx: 13
+      pre: 13
+      inlcrs: 17
+      postlcrs: 17
+    - body: lowerneck
+      idx: 14
+      pre: 14
+      inlcrs: 14
+      postlcrs: 16
+    - body: upperneck
+      idx: 15
+      pre: 15
+      inlcrs: 16
+      postlcrs: 15
+    - body: head
+      idx: 16
+      pre: 16
+      inlcrs: 15
+      postlcrs: 14
+    - body: lclavicle
+      idx: 17
+      pre: 17
+      inlcrs: 7
+      postlcrs: 13
+    - body: lhumerus
+      idx: 18
+      pre: 18
+      inlcrs: 13
+      postlcrs: 12
+    - body: lradius
+      idx: 19
+      pre: 19
+      inlcrs: 12
+      postlcrs: 11
+    - body: lwrist
+      idx: 20
+      pre: 20
+      inlcrs: 11
+      postlcrs: 10
+    - body: lhand
+      idx: 21
+      pre: 21
+      inlcrs: 10
+      postlcrs: 9
+    - body: lfingers
+      idx: 22
+      pre: 22
+      inlcrs: 9
+      postlcrs: 8
+    - body: lthumb
+      idx: 23
+      pre: 23
+      inlcrs: 8
+      postlcrs: 7
+    - body: rclavicle
+      idx: 24
+      pre: 24
+      inlcrs: 6
+      postlcrs: 6
+    - body: rhumerus
+      idx: 25
+      pre: 25
+      inlcrs: 5
+      postlcrs: 5
+    - body: rradius
+      idx: 26
+      pre: 26
+      inlcrs: 4
+      postlcrs: 4
+    - body: rwrist
+      idx: 27
+      pre: 27
+      inlcrs: 3
+      postlcrs: 3
+    - body: rhand
+      idx: 28
+      pre: 28
+      inlcrs: 2
+      postlcrs: 2
+    - body: rfingers
+      idx: 29
+      pre: 29
+      inlcrs: 1
+      postlcrs: 1
+    - body: rthumb
+      idx: 30
+      pre: 30
+      inlcrs: 0
+      postlcrs: 0
+iiwa7_description:
+  xml: robotics_structure_xml/iiwa7_description.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 9
+    nodes:
+    - body: root
+      idx: 0
+      pre: 0
+      inlcrs: 8
+      postlcrs: 8
+    - body: iiwa_link_1
+      idx: 1
+      pre: 1
+      inlcrs: 7
+      postlcrs: 7
+    - body: iiwa_link_2
+      idx: 2
+      pre: 2
+      inlcrs: 6
+      postlcrs: 6
+    - body: iiwa_link_3
+      idx: 3
+      pre: 3
+      inlcrs: 5
+      postlcrs: 5
+    - body: iiwa_link_4
+      idx: 4
+      pre: 4
+      inlcrs: 4
+      postlcrs: 4
+    - body: iiwa_link_5
+      idx: 5
+      pre: 5
+      inlcrs: 3
+      postlcrs: 3
+    - body: iiwa_link_6
+      idx: 6
+      pre: 6
+      inlcrs: 2
+      postlcrs: 2
+    - body: iiwa_link_7
+      idx: 7
+      pre: 7
+      inlcrs: 1
+      postlcrs: 1
+    - body: gripper
+      idx: 8
+      pre: 8
+      inlcrs: 0
+      postlcrs: 0
+inverted_double_pendulum:
+  xml: robotics_structure_xml/inverted_double_pendulum.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: cart
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: pole
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: pole2
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+inverted_pendulum:
+  xml: robotics_structure_xml/inverted_pendulum.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: cart
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: pole
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+jaco_arm:
+  xml: robotics_structure_xml/jaco_arm.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: b_base
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: b_1
+      idx: 1
+      pre: 1
+      inlcrs: 5
+      postlcrs: 5
+    - body: b_2
+      idx: 2
+      pre: 2
+      inlcrs: 4
+      postlcrs: 4
+    - body: b_3
+      idx: 3
+      pre: 3
+      inlcrs: 3
+      postlcrs: 3
+    - body: b_4
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 2
+    - body: b_5
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: b_6
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+jaco_arm_with_hand:
+  xml: robotics_structure_xml/jaco_arm_with_hand.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 15
+    nodes:
+    - body: b_base
+      idx: 0
+      pre: 0
+      inlcrs: 14
+      postlcrs: 14
+    - body: b_1
+      idx: 1
+      pre: 1
+      inlcrs: 13
+      postlcrs: 13
+    - body: b_2
+      idx: 2
+      pre: 2
+      inlcrs: 12
+      postlcrs: 12
+    - body: b_3
+      idx: 3
+      pre: 3
+      inlcrs: 11
+      postlcrs: 11
+    - body: b_4
+      idx: 4
+      pre: 4
+      inlcrs: 10
+      postlcrs: 10
+    - body: b_5
+      idx: 5
+      pre: 5
+      inlcrs: 9
+      postlcrs: 9
+    - body: b_6
+      idx: 6
+      pre: 6
+      inlcrs: 8
+      postlcrs: 8
+    - body: hand
+      idx: 7
+      pre: 7
+      inlcrs: 7
+      postlcrs: 7
+    - body: pinch
+      idx: 8
+      pre: 8
+      inlcrs: 6
+      postlcrs: 6
+    - body: b_finger_1
+      idx: 9
+      pre: 9
+      inlcrs: 4
+      postlcrs: 5
+    - body: b_finger_tip_1
+      idx: 10
+      pre: 10
+      inlcrs: 5
+      postlcrs: 4
+    - body: b_finger_2
+      idx: 11
+      pre: 11
+      inlcrs: 2
+      postlcrs: 3
+    - body: b_finger_tip_2
+      idx: 12
+      pre: 12
+      inlcrs: 3
+      postlcrs: 2
+    - body: b_finger_3
+      idx: 13
+      pre: 13
+      inlcrs: 1
+      postlcrs: 1
+    - body: b_finger_tip_3
+      idx: 14
+      pre: 14
+      inlcrs: 0
+      postlcrs: 0
+manipulator:
+  xml: robotics_structure_xml/manipulator.xml
+  num_objects: 7
+  objects:
+  - obj_id: 0
+    num_nodes: 9
+    nodes:
+    - body: upper_arm
+      idx: 0
+      pre: 0
+      inlcrs: 8
+      postlcrs: 8
+    - body: middle_arm
+      idx: 1
+      pre: 1
+      inlcrs: 7
+      postlcrs: 7
+    - body: lower_arm
+      idx: 2
+      pre: 2
+      inlcrs: 6
+      postlcrs: 6
+    - body: hand
+      idx: 3
+      pre: 3
+      inlcrs: 5
+      postlcrs: 5
+    - body: pinch_site
+      idx: 4
+      pre: 4
+      inlcrs: 4
+      postlcrs: 4
+    - body: thumb
+      idx: 5
+      pre: 5
+      inlcrs: 2
+      postlcrs: 3
+    - body: thumbtip
+      idx: 6
+      pre: 6
+      inlcrs: 3
+      postlcrs: 2
+    - body: finger
+      idx: 7
+      pre: 7
+      inlcrs: 1
+      postlcrs: 1
+    - body: fingertip
+      idx: 8
+      pre: 8
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 3
+    num_nodes: 1
+    nodes:
+    - body: ball
+      idx: 9
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 4
+    num_nodes: 2
+    nodes:
+    - body: peg
+      idx: 10
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: pommel
+      idx: 11
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 6
+    num_nodes: 1
+    nodes:
+    - body: slot
+      idx: 12
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 2
+    num_nodes: 1
+    nodes:
+    - body: cup
+      idx: 13
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 5
+    num_nodes: 1
+    nodes:
+    - body: target_ball
+      idx: 14
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: target_peg
+      idx: 15
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+panda_mj_description:
+  xml: robotics_structure_xml/panda_mj_description.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 11
+    nodes:
+    - body: link0
+      idx: 0
+      pre: 0
+      inlcrs: 10
+      postlcrs: 10
+    - body: link1
+      idx: 1
+      pre: 1
+      inlcrs: 9
+      postlcrs: 9
+    - body: link2
+      idx: 2
+      pre: 2
+      inlcrs: 8
+      postlcrs: 8
+    - body: link3
+      idx: 3
+      pre: 3
+      inlcrs: 7
+      postlcrs: 7
+    - body: link4
+      idx: 4
+      pre: 4
+      inlcrs: 6
+      postlcrs: 6
+    - body: link5
+      idx: 5
+      pre: 5
+      inlcrs: 5
+      postlcrs: 5
+    - body: link6
+      idx: 6
+      pre: 6
+      inlcrs: 4
+      postlcrs: 4
+    - body: link7
+      idx: 7
+      pre: 7
+      inlcrs: 3
+      postlcrs: 3
+    - body: hand
+      idx: 8
+      pre: 8
+      inlcrs: 2
+      postlcrs: 2
+    - body: left_finger
+      idx: 9
+      pre: 9
+      inlcrs: 1
+      postlcrs: 1
+    - body: right_finger
+      idx: 10
+      pre: 10
+      inlcrs: 0
+      postlcrs: 0
+pendulum:
+  xml: robotics_structure_xml/pendulum.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 1
+    nodes:
+    - body: pole
+      idx: 0
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+pusher:
+  xml: robotics_structure_xml/pusher.xml
+  num_objects: 3
+  objects:
+  - obj_id: 0
+    num_nodes: 10
+    nodes:
+    - body: r_shoulder_pan_link
+      idx: 0
+      pre: 0
+      inlcrs: 9
+      postlcrs: 9
+    - body: r_shoulder_lift_link
+      idx: 1
+      pre: 1
+      inlcrs: 8
+      postlcrs: 8
+    - body: r_upper_arm_roll_link
+      idx: 2
+      pre: 2
+      inlcrs: 7
+      postlcrs: 7
+    - body: r_upper_arm_link
+      idx: 3
+      pre: 3
+      inlcrs: 6
+      postlcrs: 6
+    - body: r_elbow_flex_link
+      idx: 4
+      pre: 4
+      inlcrs: 5
+      postlcrs: 5
+    - body: r_forearm_roll_link
+      idx: 5
+      pre: 5
+      inlcrs: 4
+      postlcrs: 4
+    - body: r_forearm_link
+      idx: 6
+      pre: 6
+      inlcrs: 3
+      postlcrs: 3
+    - body: r_wrist_flex_link
+      idx: 7
+      pre: 7
+      inlcrs: 2
+      postlcrs: 2
+    - body: r_wrist_roll_link
+      idx: 8
+      pre: 8
+      inlcrs: 1
+      postlcrs: 1
+    - body: tips_arm
+      idx: 9
+      pre: 9
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: object
+      idx: 10
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 2
+    num_nodes: 1
+    nodes:
+    - body: goal
+      idx: 11
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+quadruped:
+  xml: robotics_structure_xml/quadruped.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 17
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 16
+      postlcrs: 16
+    - body: hip_front_left
+      idx: 1
+      pre: 1
+      inlcrs: 12
+      postlcrs: 15
+    - body: knee_front_left
+      idx: 2
+      pre: 2
+      inlcrs: 15
+      postlcrs: 14
+    - body: ankle_front_left
+      idx: 3
+      pre: 3
+      inlcrs: 14
+      postlcrs: 13
+    - body: toe_front_left
+      idx: 4
+      pre: 4
+      inlcrs: 13
+      postlcrs: 12
+    - body: hip_front_right
+      idx: 5
+      pre: 5
+      inlcrs: 8
+      postlcrs: 11
+    - body: knee_front_right
+      idx: 6
+      pre: 6
+      inlcrs: 11
+      postlcrs: 10
+    - body: ankle_front_right
+      idx: 7
+      pre: 7
+      inlcrs: 10
+      postlcrs: 9
+    - body: toe_front_right
+      idx: 8
+      pre: 8
+      inlcrs: 9
+      postlcrs: 8
+    - body: hip_back_right
+      idx: 9
+      pre: 9
+      inlcrs: 4
+      postlcrs: 7
+    - body: knee_back_right
+      idx: 10
+      pre: 10
+      inlcrs: 7
+      postlcrs: 6
+    - body: ankle_back_right
+      idx: 11
+      pre: 11
+      inlcrs: 6
+      postlcrs: 5
+    - body: toe_back_right
+      idx: 12
+      pre: 12
+      inlcrs: 5
+      postlcrs: 4
+    - body: hip_back_left
+      idx: 13
+      pre: 13
+      inlcrs: 3
+      postlcrs: 3
+    - body: knee_back_left
+      idx: 14
+      pre: 14
+      inlcrs: 2
+      postlcrs: 2
+    - body: ankle_back_left
+      idx: 15
+      pre: 15
+      inlcrs: 1
+      postlcrs: 1
+    - body: toe_back_left
+      idx: 16
+      pre: 16
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: ball
+      idx: 17
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+reacher:
+  xml: robotics_structure_xml/reacher.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: body0
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: body1
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: fingertip
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: target
+      idx: 3
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+reacher_3:
+  xml: robotics_structure_xml/reacher_3.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: body0
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: body1
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 2
+    - body: body2
+      idx: 2
+      pre: 2
+      inlcrs: 1
+      postlcrs: 1
+    - body: fingertip
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: target
+      idx: 4
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+sawyer_mj_description:
+  xml: robotics_structure_xml/sawyer_mj_description.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 10
+    nodes:
+    - body: base
+      idx: 0
+      pre: 0
+      inlcrs: 9
+      postlcrs: 9
+    - body: right_l0
+      idx: 1
+      pre: 1
+      inlcrs: 8
+      postlcrs: 8
+    - body: head
+      idx: 2
+      pre: 2
+      inlcrs: 7
+      postlcrs: 7
+    - body: right_l1
+      idx: 3
+      pre: 3
+      inlcrs: 6
+      postlcrs: 6
+    - body: right_l2
+      idx: 4
+      pre: 4
+      inlcrs: 5
+      postlcrs: 5
+    - body: right_l3
+      idx: 5
+      pre: 5
+      inlcrs: 4
+      postlcrs: 4
+    - body: right_l4
+      idx: 6
+      pre: 6
+      inlcrs: 3
+      postlcrs: 3
+    - body: right_l5
+      idx: 7
+      pre: 7
+      inlcrs: 2
+      postlcrs: 2
+    - body: right_l6
+      idx: 8
+      pre: 8
+      inlcrs: 1
+      postlcrs: 1
+    - body: gripper
+      idx: 9
+      pre: 9
+      inlcrs: 0
+      postlcrs: 0
+swimmer:
+  xml: robotics_structure_xml/swimmer.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: mid
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: back
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+swimmer15:
+  xml: robotics_structure_xml/swimmer15.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 15
+    nodes:
+    - body: head
+      idx: 0
+      pre: 0
+      inlcrs: 14
+      postlcrs: 14
+    - body: segment_0
+      idx: 1
+      pre: 1
+      inlcrs: 13
+      postlcrs: 13
+    - body: segment_1
+      idx: 2
+      pre: 2
+      inlcrs: 12
+      postlcrs: 12
+    - body: segment_2
+      idx: 3
+      pre: 3
+      inlcrs: 11
+      postlcrs: 11
+    - body: segment_3
+      idx: 4
+      pre: 4
+      inlcrs: 10
+      postlcrs: 10
+    - body: segment_4
+      idx: 5
+      pre: 5
+      inlcrs: 9
+      postlcrs: 9
+    - body: segment_5
+      idx: 6
+      pre: 6
+      inlcrs: 8
+      postlcrs: 8
+    - body: segment_6
+      idx: 7
+      pre: 7
+      inlcrs: 7
+      postlcrs: 7
+    - body: segment_7
+      idx: 8
+      pre: 8
+      inlcrs: 6
+      postlcrs: 6
+    - body: segment_8
+      idx: 9
+      pre: 9
+      inlcrs: 5
+      postlcrs: 5
+    - body: segment_9
+      idx: 10
+      pre: 10
+      inlcrs: 4
+      postlcrs: 4
+    - body: segment_10
+      idx: 11
+      pre: 11
+      inlcrs: 3
+      postlcrs: 3
+    - body: segment_11
+      idx: 12
+      pre: 12
+      inlcrs: 2
+      postlcrs: 2
+    - body: segment_12
+      idx: 13
+      pre: 13
+      inlcrs: 1
+      postlcrs: 1
+    - body: segment_13
+      idx: 14
+      pre: 14
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: target_body
+      idx: 15
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+swimmer6:
+  xml: robotics_structure_xml/swimmer6.xml
+  num_objects: 2
+  objects:
+  - obj_id: 0
+    num_nodes: 6
+    nodes:
+    - body: head
+      idx: 0
+      pre: 0
+      inlcrs: 5
+      postlcrs: 5
+    - body: segment_0
+      idx: 1
+      pre: 1
+      inlcrs: 4
+      postlcrs: 4
+    - body: segment_1
+      idx: 2
+      pre: 2
+      inlcrs: 3
+      postlcrs: 3
+    - body: segment_2
+      idx: 3
+      pre: 3
+      inlcrs: 2
+      postlcrs: 2
+    - body: segment_3
+      idx: 4
+      pre: 4
+      inlcrs: 1
+      postlcrs: 1
+    - body: segment_4
+      idx: 5
+      pre: 5
+      inlcrs: 0
+      postlcrs: 0
+  - obj_id: 1
+    num_nodes: 1
+    nodes:
+    - body: target_body
+      idx: 6
+      pre: 0
+      inlcrs: 0
+      postlcrs: 0
+ur5_description:
+  xml: robotics_structure_xml/ur5_description.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 8
+    nodes:
+    - body: root
+      idx: 0
+      pre: 0
+      inlcrs: 7
+      postlcrs: 7
+    - body: shoulder_link
+      idx: 1
+      pre: 1
+      inlcrs: 6
+      postlcrs: 6
+    - body: upper_arm_link
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 5
+    - body: forearm_link
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 4
+    - body: wrist_1_link
+      idx: 4
+      pre: 4
+      inlcrs: 3
+      postlcrs: 3
+    - body: wrist_2_link
+      idx: 5
+      pre: 5
+      inlcrs: 2
+      postlcrs: 2
+    - body: wrist_3_link
+      idx: 6
+      pre: 6
+      inlcrs: 1
+      postlcrs: 1
+    - body: gripper
+      idx: 7
+      pre: 7
+      inlcrs: 0
+      postlcrs: 0
+walker:
+  xml: robotics_structure_xml/walker.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: right_thigh
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 5
+    - body: right_leg
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: right_foot
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 3
+    - body: left_thigh
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 2
+    - body: left_leg
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: left_foot
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+walker2d:
+  xml: robotics_structure_xml/walker2d.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: thigh
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 5
+    - body: leg
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: foot
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 3
+    - body: thigh_left
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 2
+    - body: leg_left
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: foot_left
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0
+walker_2_flipped:
+  xml: robotics_structure_xml/walker_2_flipped.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+walker_2_main:
+  xml: robotics_structure_xml/walker_2_main.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 2
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 1
+      postlcrs: 1
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 0
+      postlcrs: 0
+walker_3_flipped:
+  xml: robotics_structure_xml/walker_3_flipped.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: right1
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+walker_3_main:
+  xml: robotics_structure_xml/walker_3_main.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 3
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 2
+      postlcrs: 2
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 1
+    - body: right1
+      idx: 2
+      pre: 2
+      inlcrs: 0
+      postlcrs: 0
+walker_4_flipped:
+  xml: robotics_structure_xml/walker_4_flipped.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 2
+    - body: left2
+      idx: 2
+      pre: 2
+      inlcrs: 2
+      postlcrs: 1
+    - body: right1
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+walker_4_main:
+  xml: robotics_structure_xml/walker_4_main.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 4
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 3
+      postlcrs: 3
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 1
+      postlcrs: 2
+    - body: left2
+      idx: 2
+      pre: 2
+      inlcrs: 2
+      postlcrs: 1
+    - body: right1
+      idx: 3
+      pre: 3
+      inlcrs: 0
+      postlcrs: 0
+walker_5_flipped:
+  xml: robotics_structure_xml/walker_5_flipped.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 3
+    - body: left2
+      idx: 2
+      pre: 2
+      inlcrs: 3
+      postlcrs: 2
+    - body: right1
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: right2
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+walker_5_main:
+  xml: robotics_structure_xml/walker_5_main.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 5
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 4
+      postlcrs: 4
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 3
+    - body: left2
+      idx: 2
+      pre: 2
+      inlcrs: 3
+      postlcrs: 2
+    - body: right1
+      idx: 3
+      pre: 3
+      inlcrs: 1
+      postlcrs: 1
+    - body: right2
+      idx: 4
+      pre: 4
+      inlcrs: 0
+      postlcrs: 0
+walker_6_flipped:
+  xml: robotics_structure_xml/walker_6_flipped.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 6
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 5
+      postlcrs: 5
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 4
+    - body: left2
+      idx: 2
+      pre: 2
+      inlcrs: 4
+      postlcrs: 3
+    - body: left3
+      idx: 3
+      pre: 3
+      inlcrs: 3
+      postlcrs: 2
+    - body: right1
+      idx: 4
+      pre: 4
+      inlcrs: 1
+      postlcrs: 1
+    - body: right2
+      idx: 5
+      pre: 5
+      inlcrs: 0
+      postlcrs: 0
+walker_6_main:
+  xml: robotics_structure_xml/walker_6_main.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 6
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 5
+      postlcrs: 5
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 2
+      postlcrs: 4
+    - body: left2
+      idx: 2
+      pre: 2
+      inlcrs: 4
+      postlcrs: 3
+    - body: left3
+      idx: 3
+      pre: 3
+      inlcrs: 3
+      postlcrs: 2
+    - body: right1
+      idx: 4
+      pre: 4
+      inlcrs: 1
+      postlcrs: 1
+    - body: right2
+      idx: 5
+      pre: 5
+      inlcrs: 0
+      postlcrs: 0
+walker_7_flipped:
+  xml: robotics_structure_xml/walker_7_flipped.xml
+  num_objects: 1
+  objects:
+  - obj_id: 0
+    num_nodes: 7
+    nodes:
+    - body: torso
+      idx: 0
+      pre: 0
+      inlcrs: 6
+      postlcrs: 6
+    - body: left1
+      idx: 1
+      pre: 1
+      inlcrs: 3
+      postlcrs: 5
+    - body: left2
+      idx: 2
+      pre: 2
+      inlcrs: 5
+      postlcrs: 4
+    - body: left3
+      idx: 3
+      pre: 3
+      inlcrs: 4
+      postlcrs: 3
+    - body: right1
+      idx: 4
+      pre: 4
+      inlcrs: 2
+      postlcrs: 2
+    - body: right2
+      idx: 5
+      pre: 5
+      inlcrs: 1
+      postlcrs: 1
+    - body: right3
+      idx: 6
+      pre: 6
+      inlcrs: 0
+      postlcrs: 0

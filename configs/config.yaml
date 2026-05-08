@@ -1,0 +1,27 @@
+# exp setting
+exp_name: 'Trajectory-World-Model' # [1]
+ckpt_path: null
+#*********************************
+# ckpt_path: './pre_trained/MLP.ckpt'
+# ckpt_path: './pre_trained/TDM.ckpt'
+# ckpt_path: './pre_trained/trajworld.ckpt'
+# ckpt_path: './pre_trained/westworld.ckpt'
+#*********************************
+seed: 43 # random seed 43
+devices: [0, 1, 2, 3] #[0, 1, 2, 3] # gpu ids
+use_kd: False # toggle offline KD training (teacher labels from precomputed H5)
+
+# data related
+load_num_workers: 32 # number of workers for loading data
+use_cache: True # use cache for data loading
+overwrite_cache: False # overwrite existing cache
+
+# evaluation settings
+eval_prefix_T: 50 # starting step for autoregressive rollout (0 = full trajectory)
+eval_batch_size: 2 # batch size for evaluation
+eval_max_plot_samples: 3 # maximum number of samples to plot
+eval_figure_dir: "figure" # directory to save evaluation figures
+
+defaults:
+  - method: WestWorld # WestWorld / Trajworld / MLPEnsemble / TDM
+  - data: robotics

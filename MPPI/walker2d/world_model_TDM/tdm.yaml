@@ -1,0 +1,39 @@
+# common
+model_name: TDM
+
+# train
+epochs: 100 #150 #40
+lr: 1e-4
+total_steps: 1_000_000
+warmup_steps: 10_000
+weight_decay: 1e-5
+val_every_n_steps: 10000
+accumulate_grad_batches: 1  # Accumulate gradients over 2 batches to simulate larger batch size
+
+train_batch_size: 6 #64 #128
+eval_batch_size: 128 #32 #128  # Reduce to 1 due to large T*M sequence length
+
+# TDM model parameters
+uniform_bins: 256
+h_dim: 384
+n_blocks: 6 #3
+n_heads: 4
+drop_p: 0.1
+max_timestep: 1024  # Upper bound for T*M (150 * ~130 max variates)
+rel_sigma: 0.75
+mask_ratio: 0.0
+
+# lr_multichannel: 1e-3
+# lr_mamba: 1e-3
+# lr_linear: 1e-3
+# max_lr_multichannel: 2e-5
+# max_lr_mamba: 2e-5
+# max_lr_linear: 2e-5
+steps_per_epoch: 1
+
+# few-shot finetune
+resume_fixed_lr_mode: False
+resume_fixed_lr: 1e-5 # 1e-5 for finetune, 1e-4 for train from scratch
+resume_extra_steps: 300
+# 300 for ur5, 300 for a1, 300 for cassie, 1500 for train from scratch
+

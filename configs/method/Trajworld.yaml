@@ -1,0 +1,35 @@
+# config/method/Trajworld.yaml
+model_name: Trajworld
+
+# train
+epochs: 100 #150 #40
+lr: 1e-4
+total_steps: 1_000_000
+warmup_steps: 10_000
+weight_decay: 1e-5
+val_every_n_steps: 10000
+accumulate_grad_batches: 1  # Accumulate gradients over 2 batches to simulate larger batch size
+
+train_batch_size: 14 #64 #128, 14 for control
+eval_batch_size: 32 #32 #128
+
+steps_per_epoch: 1
+
+# knowledge distillation (offline precompute teacher targets), see scripts/precompute_kd_teacher.py
+kd:
+  enabled: False
+  alpha: 0.5
+  teacher_ckpt: null
+  teacher_h5_dir: ./dog_mppi_stairs_kd_trajworld
+  teacher_val_h5_dir: ./dog_mppi_stairs_kd_trajworld
+  precompute_batch_size: 16
+  overwrite_teacher_h5: false
+
+resume_fixed_lr_mode: False
+resume_fixed_lr: 1e-4 # 1e-5 for finetune, 1e-4 for train from scratch
+resume_extra_steps: 300
+
+# data related
+# 300 for ur5, 300 for a1, 300 for cassie, 1500 for train from scratch, 50000 for control
+
+

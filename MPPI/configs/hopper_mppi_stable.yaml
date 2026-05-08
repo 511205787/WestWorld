@@ -1,0 +1,34 @@
+# Hydra/OmegaConf config for hopper_mppi_expert_refcost_math.py
+# Usage:
+#   python hopper/hopper_mppi_expert_refcost_math.py --hydra-cfg configs/hopper_mppi.yaml
+
+env_name: Hopper-v2
+record_video: true
+video_dir: null            # null -> PROJECT_ROOT/output/hopper/{exp_name}
+exp_name: expert_dist_init_base_action_expert
+
+horizon: 150          # MPC horizon
+num_particles: 512    # sampling batch size
+num_workers: null     # null -> min(32, cpu_count())
+step_iters: 1         # inner update loops per real step
+
+init_cov: 0.3         # diag covariance (scalar or list)
+filter_coeffs: [0.5, 0.5, 0.0]  # AR(2) noise smoothing
+lam: 0.5              # softmax temperature
+alpha: 0              # 1: ignore control cost, 0: include
+step_size: 0.4        # distribution mean update rate
+gamma: 1.0
+base_action: expert   # null | repeat | random | expert
+
+max_ep_len: 4000
+terminal_per_step_penalty: 10.0
+seed: 123
+deterministic_seed: true
+# expert init: none | dist (mean/std) | sequence (the first H action steps)
+expert_init_mode: dist
+expert_cov_scale: 0.8
+
+# expert reference cost
+use_ref_cost: true
+ref_pos_weight: 0.15
+ref_vel_weight: 0.15

@@ -1,0 +1,20 @@
+# Hydra sweep config for world model checkpoints/types
+# Usage:
+#   python hopper/hopper_mppi_expert_refcost_world_model.py --config-name hopper_mppi_world_model_sweep -m
+
+defaults:
+  - hopper_mppi
+  - _self_
+
+exp_name: tdm_pretrained
+wm_type: tdm
+wm_cfg: hopper/world_model_TDM/tdm.yaml
+wm_device: 0
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      # NOTE: ckpt paths contain "=" so each entry is quoted.
+      wm_ckpt: >-
+        'hopper/world_model_TDM/TDM0.ckpt'

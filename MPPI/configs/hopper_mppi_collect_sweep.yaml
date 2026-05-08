@@ -1,0 +1,17 @@
+# Hydra sweep config for multiple seeds
+# Usage:
+#   python hopper/hopper_mppi_collect_pt.py --config-name hopper_mppi_collect_sweep
+
+defaults:
+  - hopper_mppi_collect
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: "123,125,128,129,133,134,136,137,138,139,
+        141,143,145,146,147,148,152,153,156,157,
+        159,161,162,163,164,165,167,168,170,171,
+        173,174,175,176,177,178,179,180,183,184,
+        186,187,189,190,191,192,193,195,199,201,
+        202,203,205,206,215,218,220,221,222"

@@ -1,0 +1,36 @@
+# Hydra/OmegaConf config for walker2d_mppi_collect_pt.py
+# Usage:
+#   python walker2d/walker2d_mppi_collect_pt.py --config-name walker2d_mppi_collect
+
+env_name: Walker2d-v2
+record_video: true
+video_dir: null           # null -> PROJECT_ROOT/output/walker2d/{exp_name}/{ts}/video
+rollout_dir: null         # null -> PROJECT_ROOT/output/walker2d/{exp_name}/{ts}/rollout
+exp_name: expert_dist_init_base_action_expert_collect
+
+horizon: 100
+num_particles: 256
+num_workers: null          # null -> min(32, cpu_count())
+step_iters: 1
+
+init_cov: 0.4
+filter_coeffs: [0.4, 0.6, 0.0]  # AR(2) noise smoothing
+lam: 0.25
+alpha: 0
+step_size: 0.4
+gamma: 1.0
+base_action: expert        # null | repeat | random | expert
+
+max_ep_len: 1000
+terminal_per_step_penalty: 100.0
+seed: 123
+deterministic_seed: true
+# expert init: none | dist (mean/variance) | sequence (the first H action steps)
+expert_init_mode: dist
+expert_cov_scale: 0.8
+
+use_ref_cost: true
+ref_pos_weight: 1.0
+ref_vel_weight: 0.01
+
+num_episodes: 1

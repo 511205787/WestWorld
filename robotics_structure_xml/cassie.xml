@@ -1,0 +1,189 @@
+<mujoco model="cassie">
+  <option iterations="50" timestep="0.001" solver="PGS" gravity="0 0 -9.81" />
+
+  <compiler angle="radian" meshdir="meshes" eulerseq="zyx" autolimits="true" />
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.01" />
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
+    <motor ctrllimited="true" />
+    <equality solref="0.001 2" />
+    <default class="visualgeom">
+      <geom material="visualgeom" condim="1" contype="0" conaffinity="0" />
+    </default>
+  </default>
+
+  <worldbody>
+    <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
+    <light directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
+    <geom name="ground" type="plane" pos="0 0 0" size="100 100 0.001" quat="1 0 0 0" material="matplane" condim="3" conaffinity="15" />
+    <camera name="fixed" pos="0 -3.0 1.6185000000003646" xyaxes="1 0 0 0 0 1" />
+    <camera name="track" mode="trackcom" pos="0 -3.0 1.6185000000003646" xyaxes="1 0 0 0 0 1" />
+    <body name="root" pos="0 0 1.1185000000003646" quat="1 0 0 0">
+      <freejoint name="root" />
+      <site name="imu" size="0.01" pos="0 0 0" />
+      <geom size="0.005 0.005 0.005" type="box" rgba="0.35 0.35 0.35 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="box" rgba="0.35 0.35 0.35 1" size="0.005 0.005 0.005" />
+      <geom size="0.005 0.005 0.005" pos="0.03155 0 -0.07996" type="box" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="box" rgba="" size="0.005 0.005 0.005" pos="0.03155 0 -0.07996" />
+      <geom size="0.005 0.005 0.005" pos="0.021 0.135 0" quat="0.707107 0 0.707107 0" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" pos="0.021 0.135 0" quat="0.707107 0 0.707107 0" />
+      <geom size="0.005 0.005 0.005" pos="0.021 -0.135 0" quat="0.707107 0 0.707107 0" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" pos="0.021 -0.135 0" quat="0.707107 0 0.707107 0" />
+      <body name="left_pelvis_rotation" pos="-0.049 0.135 0">
+        <inertial pos="0.0257 0.0001 0.0179" quat="0.499175 0.500947 0.49945 0.500426" mass="1.82" diaginertia="0.00559001 0.00463999 0.00272" />
+        <joint name="hip_abduction_left" pos="0 0 0" axis="1 0 0" range="-0.2618 0.3927" actuatorfrcrange="-4.5 4.5" />
+        <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+        <body name="left_hip" pos="0 0 -0.09" quat="0.5 0.5 0.5 -0.5">
+          <inertial pos="-0.0557 0 0" quat="-2.27096e-05 0.707067 -5.59136e-05 0.707146" mass="1.17" diaginertia="0.00644 0.00608 0.000842" />
+          <joint name="hip_rotation_left" pos="0 0 0" axis="-1 0 0" range="-0.3927 0.3927" actuatorfrcrange="-4.5 4.5" />
+          <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+          <body name="left_thigh">
+            <inertial pos="0.0598 0.0001 -0.0358" quat="0.585322 0.408193 0.421237 0.559765" mass="5.52" diaginertia="0.0563059 0.0536365 0.0141575" />
+            <joint name="hip_flexion_left" pos="0 0 0" axis="0 0 1" range="-0.8727 1.3963" actuatorfrcrange="-12.2 12.2" />
+            <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+            <body name="left_knee" pos="0.12 0 0.0045">
+              <inertial pos="0.023 0.0321 -0.0022" quat="0.32984 0.627298 -0.32664 0.625307" mass="0.758" diaginertia="0.00334002 0.00282152 0.000778464" />
+              <joint name="knee_joint_left" pos="0 0 0" axis="0 0 1" range="-2.8623 -0.6458" actuatorfrcrange="-12.2 12.2" />
+              <geom size="0.005 0.005 0.005" type="box" rgba="0.35 0.35 0.35 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="box" rgba="0.35 0.35 0.35 1" size="0.005 0.005 0.005" />
+              <body name="left_shin" pos="0.0607 0.0474 0">
+                <inertial pos="0.1834 0.0012 0.0002" quat="0.482454 0.521701 0.477311 0.516953" mass="0.577" diaginertia="0.0341033 0.0341 0.000356694" />
+                <joint name="knee_to_shin_left" pos="0 0 0" axis="0 0 1" range="-100 100" />
+                <geom size="0.005 0.005 0.005" type="box" rgba="0.35 0.35 0.35 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="box" rgba="0.35 0.35 0.35 1" size="0.005 0.005 0.005" />
+                <body name="left_tarsus" pos="0.4348 0.02 0">
+                  <inertial pos="0.1105 -0.0306 -0.0013" quat="-0.00956483 0.701578 0.0808169 0.70793" mass="0.782" diaginertia="0.0239046 0.0234668 0.000758595" />
+                  <joint name="ankle_joint_left" pos="0 0 0" axis="0 0 1" range="-100 100" />
+                  <geom size="0.005 0.005 0.005" type="box" rgba="0.35 0.35 0.35 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                  <geom type="box" rgba="0.35 0.35 0.35 1" size="0.005 0.005 0.005" />
+                  <body name="left_toe" pos="0.408 -0.04 0">
+                    <inertial pos="0.0047 0.0275 -0.0001" quat="0.608846 0.351171 -0.614442 0.358394" mass="0.15" diaginertia="0.000449018 0.000343377 0.000114605" />
+                    <joint name="toe_joint_left" pos="0 0 0" axis="0 0 1" range="-2.4435 -0.5236" actuatorfrcrange="-0.9 0.9" />
+                    <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                    <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_pelvis_rotation" pos="-0.049 -0.135 0">
+        <inertial pos="0.0257 -0.0001 0.0179" quat="0.500426 0.49945 0.500947 0.499175" mass="1.82" diaginertia="0.00559001 0.00463999 0.00272" />
+        <joint name="hip_abduction_right" pos="0 0 0" axis="1 0 0" range="-0.3927 0.2618" actuatorfrcrange="-4.5 4.5" />
+        <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+        <body name="right_hip" pos="0 0 -0.09" quat="0.5 0.5 0.5 -0.5">
+          <inertial pos="-0.0557 0 0" quat="-2.27096e-05 0.707067 -5.59136e-05 0.707146" mass="1.17" diaginertia="0.00644 0.00608 0.000842" />
+          <joint name="hip_rotation_right" pos="0 0 0" axis="-1 0 0" range="-0.3927 0.3927" actuatorfrcrange="-4.5 4.5" />
+          <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+          <body name="right_thigh">
+            <inertial pos="0.0598 0.0001 0.0358" quat="0.408193 0.585322 0.559765 0.421237" mass="5.52" diaginertia="0.0563059 0.0536365 0.0141575" />
+            <joint name="hip_flexion_right" pos="0 0 0" axis="0 0 1" range="-0.8727 1.3963" actuatorfrcrange="-12.2 12.2" />
+            <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+            <body name="right_knee" pos="0.12 0 -0.0045">
+              <inertial pos="0.023 0.0321 0.0022" quat="0.32664 0.625307 -0.32984 0.627298" mass="0.758" diaginertia="0.00334002 0.00282152 0.000778464" />
+              <joint name="knee_joint_right" pos="0 0 0" axis="0 0 1" range="-2.8623 -0.6458" actuatorfrcrange="-12.2 12.2" />
+              <geom size="0.005 0.005 0.005" type="box" rgba="0.35 0.35 0.35 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="box" rgba="0.35 0.35 0.35 1" size="0.005 0.005 0.005" />
+              <body name="right_shin" pos="0.0607 0.0474 0">
+                <inertial pos="0.1834 0.0012 -0.0002" quat="0.521701 0.482454 0.516953 0.477311" mass="0.577" diaginertia="0.0341033 0.0341 0.000356694" />
+                <joint name="knee_to_shin_right" pos="0 0 0" axis="0 0 1" range="-100 100" />
+                <geom size="0.005 0.005 0.005" type="box" rgba="0.35 0.35 0.35 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="box" rgba="0.35 0.35 0.35 1" size="0.005 0.005 0.005" />
+                <body name="right_tarsus" pos="0.4348 0.02 0">
+                  <inertial pos="0.1105 -0.0306 0.0013" quat="-0.0808169 0.70793 0.00956483 0.701578" mass="0.782" diaginertia="0.0239046 0.0234668 0.000758595" />
+                  <joint name="ankle_joint_right" pos="0 0 0" axis="0 0 1" range="-100 100" />
+                  <geom size="0.005 0.005 0.005" type="box" rgba="0.35 0.35 0.35 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                  <geom type="box" rgba="0.35 0.35 0.35 1" size="0.005 0.005 0.005" />
+                  <body name="right_toe" pos="0.408 -0.04 0">
+                    <inertial pos="0.0047 0.0275 0.0001" quat="0.614442 0.358394 -0.608846 0.351171" mass="0.15" diaginertia="0.000449018 0.000343377 0.000114605" />
+                    <joint name="toe_joint_right" pos="0 0 0" axis="0 0 1" range="-2.4435 -0.5236" actuatorfrcrange="-0.9 0.9" />
+                    <geom size="0.005 0.005 0.005" type="box" rgba="0.75 0.75 0.75 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                    <geom type="box" rgba="0.75 0.75 0.75 1" size="0.005 0.005 0.005" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <asset>
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".0 .0 .0" rgb2=".8 .8 .8" width="100" height="100" />
+    <material name="matplane" reflectance="0." texture="texplane" texrepeat="1 1" texuniform="true" />
+    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+  </asset>
+
+  <actuator>
+    <motor name="hip_abduction_left" joint="hip_abduction_left" ctrllimited="true" ctrlrange="-4.5 4.5" gear="1" />
+    <motor name="hip_rotation_left" joint="hip_rotation_left" ctrllimited="true" ctrlrange="-4.5 4.5" gear="1" />
+    <motor name="hip_flexion_left" joint="hip_flexion_left" ctrllimited="true" ctrlrange="-12.2 12.2" gear="1" />
+    <motor name="knee_joint_left" joint="knee_joint_left" ctrllimited="true" ctrlrange="-12.2 12.2" gear="1" />
+    <motor name="knee_to_shin_left" joint="knee_to_shin_left" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <motor name="ankle_joint_left" joint="ankle_joint_left" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <motor name="toe_joint_left" joint="toe_joint_left" ctrllimited="true" ctrlrange="-0.9 0.9" gear="1" />
+    <motor name="hip_abduction_right" joint="hip_abduction_right" ctrllimited="true" ctrlrange="-4.5 4.5" gear="1" />
+    <motor name="hip_rotation_right" joint="hip_rotation_right" ctrllimited="true" ctrlrange="-4.5 4.5" gear="1" />
+    <motor name="hip_flexion_right" joint="hip_flexion_right" ctrllimited="true" ctrlrange="-12.2 12.2" gear="1" />
+    <motor name="knee_joint_right" joint="knee_joint_right" ctrllimited="true" ctrlrange="-12.2 12.2" gear="1" />
+    <motor name="knee_to_shin_right" joint="knee_to_shin_right" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <motor name="ankle_joint_right" joint="ankle_joint_right" ctrllimited="true" ctrlrange="-1 1" gear="1" />
+    <motor name="toe_joint_right" joint="toe_joint_right" ctrllimited="true" ctrlrange="-0.9 0.9" gear="1" />
+  </actuator>
+
+  <sensor>
+    <actuatorpos name="hip_abduction_left_p" actuator="hip_abduction_left" />
+    <actuatorvel name="hip_abduction_left_v" actuator="hip_abduction_left" />
+    <actuatorfrc name="hip_abduction_left_f" actuator="hip_abduction_left" noise="0.001" />
+    <actuatorpos name="hip_rotation_left_p" actuator="hip_rotation_left" />
+    <actuatorvel name="hip_rotation_left_v" actuator="hip_rotation_left" />
+    <actuatorfrc name="hip_rotation_left_f" actuator="hip_rotation_left" noise="0.001" />
+    <actuatorpos name="hip_flexion_left_p" actuator="hip_flexion_left" />
+    <actuatorvel name="hip_flexion_left_v" actuator="hip_flexion_left" />
+    <actuatorfrc name="hip_flexion_left_f" actuator="hip_flexion_left" noise="0.001" />
+    <actuatorpos name="knee_joint_left_p" actuator="knee_joint_left" />
+    <actuatorvel name="knee_joint_left_v" actuator="knee_joint_left" />
+    <actuatorfrc name="knee_joint_left_f" actuator="knee_joint_left" noise="0.001" />
+    <actuatorpos name="knee_to_shin_left_p" actuator="knee_to_shin_left" />
+    <actuatorvel name="knee_to_shin_left_v" actuator="knee_to_shin_left" />
+    <actuatorfrc name="knee_to_shin_left_f" actuator="knee_to_shin_left" noise="0.001" />
+    <actuatorpos name="ankle_joint_left_p" actuator="ankle_joint_left" />
+    <actuatorvel name="ankle_joint_left_v" actuator="ankle_joint_left" />
+    <actuatorfrc name="ankle_joint_left_f" actuator="ankle_joint_left" noise="0.001" />
+    <actuatorpos name="toe_joint_left_p" actuator="toe_joint_left" />
+    <actuatorvel name="toe_joint_left_v" actuator="toe_joint_left" />
+    <actuatorfrc name="toe_joint_left_f" actuator="toe_joint_left" noise="0.001" />
+    <actuatorpos name="hip_abduction_right_p" actuator="hip_abduction_right" />
+    <actuatorvel name="hip_abduction_right_v" actuator="hip_abduction_right" />
+    <actuatorfrc name="hip_abduction_right_f" actuator="hip_abduction_right" noise="0.001" />
+    <actuatorpos name="hip_rotation_right_p" actuator="hip_rotation_right" />
+    <actuatorvel name="hip_rotation_right_v" actuator="hip_rotation_right" />
+    <actuatorfrc name="hip_rotation_right_f" actuator="hip_rotation_right" noise="0.001" />
+    <actuatorpos name="hip_flexion_right_p" actuator="hip_flexion_right" />
+    <actuatorvel name="hip_flexion_right_v" actuator="hip_flexion_right" />
+    <actuatorfrc name="hip_flexion_right_f" actuator="hip_flexion_right" noise="0.001" />
+    <actuatorpos name="knee_joint_right_p" actuator="knee_joint_right" />
+    <actuatorvel name="knee_joint_right_v" actuator="knee_joint_right" />
+    <actuatorfrc name="knee_joint_right_f" actuator="knee_joint_right" noise="0.001" />
+    <actuatorpos name="knee_to_shin_right_p" actuator="knee_to_shin_right" />
+    <actuatorvel name="knee_to_shin_right_v" actuator="knee_to_shin_right" />
+    <actuatorfrc name="knee_to_shin_right_f" actuator="knee_to_shin_right" noise="0.001" />
+    <actuatorpos name="ankle_joint_right_p" actuator="ankle_joint_right" />
+    <actuatorvel name="ankle_joint_right_v" actuator="ankle_joint_right" />
+    <actuatorfrc name="ankle_joint_right_f" actuator="ankle_joint_right" noise="0.001" />
+    <actuatorpos name="toe_joint_right_p" actuator="toe_joint_right" />
+    <actuatorvel name="toe_joint_right_v" actuator="toe_joint_right" />
+    <actuatorfrc name="toe_joint_right_f" actuator="toe_joint_right" noise="0.001" />
+    <framequat name="orientation" objtype="site" noise="0.001" objname="imu" />
+    <gyro name="angular-velocity" site="imu" noise="0.005" cutoff="34.9" />
+  </sensor>
+</mujoco>

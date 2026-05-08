@@ -1,0 +1,55 @@
+# config/method/WestWorld.yaml
+model_name: WestWorld
+
+# train
+epochs: 100 #150 #40
+lr: 2e-4
+total_steps: 1_000_000
+warmup_steps: 10000
+weight_decay: 1e-5
+val_every_n_steps: 10000 # 400 # 10000 for pretrain
+accumulate_grad_batches: 1  # Accumulate gradients over 2 batches to simulate larger batch size
+
+train_batch_size: 14 #64 #128, 14 for control pretrained model
+eval_batch_size: 32 #32 #128
+
+steps_per_epoch: 1
+
+resume_fixed_lr_mode: False # only enable when fixed learning parameter for few-shot finetuning
+finetune_few_params: False #
+finetune_last_n_blocks: 6 # only finetuning last n sys-moe layer, only use when finetune_few_params=True
+resume_fixed_lr: 1e-5 # 1e-5 for finetune, 1e-4 for train from scratch
+resume_extra_steps: 300 # 50000
+# data related
+# 300 for ur5, 300 for a1, 300 for cassie, 1500 for train from scratch
+
+# knowledge distillation (offline precompute teacher targets), see scripts/precompute_kd_teacher.py
+kd:
+  enabled: False
+  alpha: 0.5
+  teacher_ckpt: null # offline teacher checkpoint path
+  teacher_h5_dir: ./dog_mppi_stairs_kd_trajworld
+  teacher_val_h5_dir: ./dog_mppi_stairs_kd_trajworld
+  precompute_batch_size: 128
+  overwrite_teacher_h5: false
+
+# model parameters
+uniform_bins: 256
+h_dim: 256
+n_blocks: 6
+n_heads: 4
+drop_p: 0.1
+max_timestep: 1024  # Upper bound for T
+rel_sigma: 0.75
+# mamba MoE layer parameters
+mamba_cfg:
+  state_size: 64
+  conv_dimension: 4
+  expansion_factor: 2
+  num_layers: 1
+  num_experts: 4
+  top_k: 1
+  layernorm_epsilon: 1e-5
+  use_switch_mlp: false
+  hidden_size: 256
+  ffn_hidden_size: 512

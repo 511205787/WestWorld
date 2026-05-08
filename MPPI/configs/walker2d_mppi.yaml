@@ -1,0 +1,59 @@
+# Hydra/OmegaConf config for walker2d_mppi_expert_refcost_math.py
+# Usage:
+#   python walker2d/walker2d_mppi_expert_refcost_math.py --config-name walker2d_mppi
+
+env_name: Walker2d-v2
+record_video: true
+video_dir: null            # null -> PROJECT_ROOT/output/walker2d/{exp_name}
+exp_name: env_mppi
+
+horizon: 100
+num_particles: 256
+num_workers: null          # null -> min(32, cpu_count())
+step_iters: 1
+
+init_cov: 0.4
+filter_coeffs: [0.4, 0.6, 0.0]  # AR(2) noise smoothing
+lam: 0.25
+alpha: 0
+step_size: 0.4
+gamma: 1.0
+base_action: expert        # null | repeat | random | expert
+
+max_ep_len: 1000
+terminal_per_step_penalty: 100.0
+seed: 12
+deterministic_seed: true
+# expert init: none | dist (per-dimension mean/variance) | sequence (the first H action steps)
+expert_init_mode: dist
+expert_cov_scale: 0.8
+
+# expert reference cost
+use_ref_cost: true
+# ref_pos_weight: 1.0   # consistent with the old default
+# ref_vel_weight: 0.01  # consistent with the old default
+ref_pos_weight: [0.0, 10.0, 10.0, 10.0, 1.0, 1.0, 10.0, 1.0, 1.0]
+ref_vel_weight: [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+
+# world model toggle & paths
+use_world_model: true           # true -> use learned world model rollouts; false -> real sim rollouts
+wm_type: westworld               # westworld | trajmoe | mlpensemble | tdm | trajworld
+# westworld configs
+wm_ckpt: walker2d/world_model_westworld/westworld.ckpt
+wm_cfg: walker2d/world_model_westworld/WestWorld.yaml
+# trajworld configs
+# wm_ckpt: walker2d/world_model_Trajworld/trajworld.ckpt
+# wm_cfg: walker2d/world_model_Trajworld/Trajworld.yaml
+# tdm configs
+# wm_ckpt: walker2d/world_model_TDM/TDM.ckpt
+# wm_cfg: walker2d/world_model_TDM/tdm.yaml
+# MLP configs
+# wm_ckpt: walker2d/world_model_MLPEnsemble/MLP.ckpt
+# wm_cfg: walker2d/world_model_MLPEnsemble/MLPEnsemble.yaml
+
+wm_minmax: walker2d/minmax_mppi_rollouts_walker2d.pt
+wm_device: 2
+mppi_obs_dim: 18
+mppi_act_dim: 6
+wm_max_obs_dim: 37
+wm_max_act_dim: 12

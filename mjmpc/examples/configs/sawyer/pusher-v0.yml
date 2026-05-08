@@ -1,0 +1,70 @@
+env_name          : 'pusher-v0'
+n_episodes        : 10
+max_ep_length     : 100
+seed              : 123
+base_action       : 'null'
+render            : True
+exp_notes         : '7-DOF Sawyer arm pushing a puck to target locations'
+
+random_shooting:
+  horizon           : 16
+  init_cov          : 0.15
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  num_cpu           : 8
+  particles_per_cpu : 4
+
+mppi:
+  horizon           : 32
+  init_cov          : 0.1
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  lam               : 0.1
+  alpha             : 1
+  num_cpu           : 8
+  particles_per_cpu : 5
+  base_action       : 'null'
+  sample_mode       : 'mean'
+  time_based_weights: False
+
+cem:
+  horizon           : 16
+  init_cov          : 1.0
+  cov_type          : 'full'
+  beta              : 0.6
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  elite_frac        : 0.15
+  num_cpu           : 8
+  particles_per_cpu : 4
+
+dmd:
+  horizon           : 16
+  init_cov          : 1.0
+  update_cov        : True
+  cov_type          : 'full'
+  beta              : 0.6
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : [0.55, 0.6]
+  lam               : [0.15, 0.2, 0.3]
+  num_cpu           : 8
+  particles_per_cpu : 4
+
+pfmpc:
+  horizon           : 16
+  cov_shift         : 0.55
+  cov_resample      : 1.0
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  lam               : 0.2
+  num_cpu           : 8
+  particles_per_cpu : 4

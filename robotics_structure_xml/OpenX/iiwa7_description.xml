@@ -1,0 +1,113 @@
+<mujoco model="iiwa7">
+  <option iterations="50" timestep="0.001" solver="PGS" gravity="0 0 -9.81" />
+
+  <compiler angle="radian" meshdir="meshes" eulerseq="zyx" autolimits="true" />
+
+  <default>
+    <joint limited="true" damping="0.01" armature="0.01" frictionloss="0.01" />
+    <geom condim="4" contype="1" conaffinity="15" friction="0.9 0.2 0.2" solref="0.001 2" />
+    <motor ctrllimited="true" />
+    <equality solref="0.001 2" />
+    <default class="visualgeom">
+      <geom material="visualgeom" condim="1" contype="0" conaffinity="0" />
+    </default>
+  </default>
+
+  <worldbody>
+    <light directional="true" diffuse="0.4 0.4 0.4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
+    <light directional="true" diffuse="0.6 0.6 0.6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
+    <geom name="ground" type="plane" pos="0 0 0" size="100 100 0.001" quat="1 0 0 0" material="matplane" condim="3" conaffinity="15" />
+    <camera name="fixed" pos="0 -3.0 0.5005" xyaxes="1 0 0 0 0 1" />
+    <camera name="track" mode="trackcom" pos="0 -3.0 0.5005" xyaxes="1 0 0 0 0 1" />
+    <body name="root" pos="0 0 0.0005" quat="1 0 0 0">
+      <freejoint name="root" />
+      <site name="imu" size="0.01" pos="0 0 0" />
+      <geom size="0.0005 0.0005 0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+      <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" />
+      <body name="iiwa_link_1" pos="0 0 0.15">
+        <inertial pos="0 -0.03 0.12" quat="0.428904 0.562175 -0.562175 0.428904" mass="3.4525" diaginertia="0.0218946 0.02183 0.00663837" />
+        <joint name="iiwa_joint_1" pos="0 0 0" axis="0 0 1" range="-2.96706 2.96706" actuatorfrcrange="-300 300" damping="0.5" />
+        <geom size="0.0005 0.0005 0.0005" pos="0 0 0.0075" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+        <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" pos="0 0 0.0075" />
+        <body name="iiwa_link_2" pos="0 0 0.19" quat="0 0 0.707107 0.707107">
+          <inertial pos="0.0003 0.059 0.042" quat="0.701371 0.0898824 0.0898824 0.701371" mass="3.4821" diaginertia="0.02179 0.0217049 0.00684512" />
+          <joint name="iiwa_joint_2" pos="0 0 0" axis="0 0 1" range="-2.0944 2.0944" actuatorfrcrange="-300 300" damping="0.5" />
+          <geom size="0.0005 0.0005 0.0005" type="box" rgba="1 0.423529 0.0392157 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+          <geom type="box" rgba="1 0.423529 0.0392157 1" size="0.0005 0.0005 0.0005" />
+          <body name="iiwa_link_3" pos="0 0.21 0" quat="0 0 0.707107 0.707107">
+            <inertial pos="0 0.03 0.13" quat="0.56292 0.427927 -0.427927 0.56292" mass="4.05623" diaginertia="0.0321488 0.03204 0.00799117" />
+            <joint name="iiwa_joint_3" pos="0 0 0" axis="0 0 1" range="-2.96706 2.96706" actuatorfrcrange="-300 300" damping="0.5" />
+            <geom size="0.0005 0.0005 0.0005" pos="0 0 -0.026" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+            <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" pos="0 0 -0.026" />
+            <body name="iiwa_link_4" pos="0 0 0.19" quat="0.707107 0.707107 0 0">
+              <inertial pos="0 0.067 0.034" quat="0.991887 -0.127124 0 0" mass="3.4822" diaginertia="0.02178 0.0216947 0.00684029" />
+              <joint name="iiwa_joint_4" pos="0 0 0" axis="0 0 1" range="-2.0944 2.0944" actuatorfrcrange="-300 300" damping="0.5" />
+              <geom size="0.0005 0.0005 0.0005" type="box" rgba="1 0.423529 0.0392157 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+              <geom type="box" rgba="1 0.423529 0.0392157 1" size="0.0005 0.0005 0.0005" />
+              <body name="iiwa_link_5" pos="0 0.21 0" quat="0 0 0.707107 0.707107">
+                <inertial pos="0.0001 0.021 0.076" quat="0.365352 0.605407 -0.605407 0.365352" mass="2.1633" diaginertia="0.0131987 0.01287 0.0036293" />
+                <joint name="iiwa_joint_5" pos="0 0 0" axis="0 0 1" range="-2.96706 2.96706" actuatorfrcrange="-300 300" damping="0.5" />
+                <geom size="0.0005 0.0005 0.0005" pos="0 0 -0.026" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" pos="0 0 -0.026" />
+                <body name="iiwa_link_6" pos="0 0.0607 0.19" quat="0.707107 0.707107 0 0">
+                  <inertial pos="0 0.0006 0.0004" quat="0.996112 0.088097 0 0" mass="2.3466" diaginertia="0.006509 0.00631585 0.00447015" />
+                  <joint name="iiwa_joint_6" pos="0 0 0" axis="0 0 1" range="-2.0944 2.0944" actuatorfrcrange="-300 300" damping="0.5" />
+                  <geom size="0.0005 0.0005 0.0005" type="box" rgba="1 0.423529 0.0392157 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                  <geom type="box" rgba="1 0.423529 0.0392157 1" size="0.0005 0.0005 0.0005" />
+                  <body name="iiwa_link_7" pos="0 0.081 0.0607" quat="0 0 0.707107 0.707107">
+                    <inertial pos="0 0 0.02" quat="0.923068 0 0 0.384636" mass="3.129" diaginertia="0.0152362 0.0140538 0.002872" />
+                    <joint name="iiwa_joint_7" pos="0 0 0" axis="0 0 1" range="-3.05433 3.05433" actuatorfrcrange="-300 300" damping="0.5" />
+                    <geom size="0.0005 0.0005 0.0005" pos="0 0 -0.0005" type="box" rgba="0.7 0.7 0.7 1" contype="1" conaffinity="0" density="0" group="1" class="visualgeom" />
+                    <geom type="box" rgba="0.7 0.7 0.7 1" size="0.0005 0.0005 0.0005" pos="0 0 -0.0005" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <asset>
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".0 .0 .0" rgb2=".8 .8 .8" width="100" height="100" />
+    <material name="matplane" reflectance="0." texture="texplane" texrepeat="1 1" texuniform="true" />
+    <material name="visualgeom" rgba="0.5 0.9 0.2 1" />
+  </asset>
+
+  <actuator>
+    <motor name="iiwa_joint_1" joint="iiwa_joint_1" ctrllimited="true" ctrlrange="-300 300" gear="1" />
+    <motor name="iiwa_joint_2" joint="iiwa_joint_2" ctrllimited="true" ctrlrange="-300 300" gear="1" />
+    <motor name="iiwa_joint_3" joint="iiwa_joint_3" ctrllimited="true" ctrlrange="-300 300" gear="1" />
+    <motor name="iiwa_joint_4" joint="iiwa_joint_4" ctrllimited="true" ctrlrange="-300 300" gear="1" />
+    <motor name="iiwa_joint_5" joint="iiwa_joint_5" ctrllimited="true" ctrlrange="-300 300" gear="1" />
+    <motor name="iiwa_joint_6" joint="iiwa_joint_6" ctrllimited="true" ctrlrange="-300 300" gear="1" />
+    <motor name="iiwa_joint_7" joint="iiwa_joint_7" ctrllimited="true" ctrlrange="-300 300" gear="1" />
+  </actuator>
+
+  <sensor>
+    <actuatorpos name="iiwa_joint_1_p" actuator="iiwa_joint_1" />
+    <actuatorvel name="iiwa_joint_1_v" actuator="iiwa_joint_1" />
+    <actuatorfrc name="iiwa_joint_1_f" actuator="iiwa_joint_1" noise="0.001" />
+    <actuatorpos name="iiwa_joint_2_p" actuator="iiwa_joint_2" />
+    <actuatorvel name="iiwa_joint_2_v" actuator="iiwa_joint_2" />
+    <actuatorfrc name="iiwa_joint_2_f" actuator="iiwa_joint_2" noise="0.001" />
+    <actuatorpos name="iiwa_joint_3_p" actuator="iiwa_joint_3" />
+    <actuatorvel name="iiwa_joint_3_v" actuator="iiwa_joint_3" />
+    <actuatorfrc name="iiwa_joint_3_f" actuator="iiwa_joint_3" noise="0.001" />
+    <actuatorpos name="iiwa_joint_4_p" actuator="iiwa_joint_4" />
+    <actuatorvel name="iiwa_joint_4_v" actuator="iiwa_joint_4" />
+    <actuatorfrc name="iiwa_joint_4_f" actuator="iiwa_joint_4" noise="0.001" />
+    <actuatorpos name="iiwa_joint_5_p" actuator="iiwa_joint_5" />
+    <actuatorvel name="iiwa_joint_5_v" actuator="iiwa_joint_5" />
+    <actuatorfrc name="iiwa_joint_5_f" actuator="iiwa_joint_5" noise="0.001" />
+    <actuatorpos name="iiwa_joint_6_p" actuator="iiwa_joint_6" />
+    <actuatorvel name="iiwa_joint_6_v" actuator="iiwa_joint_6" />
+    <actuatorfrc name="iiwa_joint_6_f" actuator="iiwa_joint_6" noise="0.001" />
+    <actuatorpos name="iiwa_joint_7_p" actuator="iiwa_joint_7" />
+    <actuatorvel name="iiwa_joint_7_v" actuator="iiwa_joint_7" />
+    <actuatorfrc name="iiwa_joint_7_f" actuator="iiwa_joint_7" noise="0.001" />
+    <framequat name="orientation" objtype="site" noise="0.001" objname="imu" />
+    <gyro name="angular-velocity" site="imu" noise="0.005" cutoff="34.9" />
+  </sensor>
+</mujoco>

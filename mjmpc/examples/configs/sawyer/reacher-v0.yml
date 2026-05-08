@@ -1,0 +1,98 @@
+env_name          : 'sawyer_reacher-v0'
+n_episodes        : 1
+max_ep_length     : 75
+seed              : 123
+render            : True
+job_mode          : 'sweep'
+exp_notes         : '7-DOF Sawyer arm reaching various spatial goals for the end effector'
+
+random_shooting:
+  horizon           : 16
+  init_cov          : 0.1
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  num_cpu           : 8
+  particles_per_cpu : 4
+  sample_mode       : 'mean'
+  base_action       : 'null'
+
+mppi:
+  horizon           : 16
+  init_cov          : 0.1
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  lam               : 0.2
+  alpha             : 1
+  num_cpu           : 8
+  particles_per_cpu : 4
+  sample_mode       : 'mean'
+  base_action       : 'null'
+
+cem:
+  horizon           : 16
+  init_cov          : 0.1
+  cov_type          : 'full'
+  beta              : 1.0
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  elite_frac        : 0.2
+  num_cpu           : 8
+  particles_per_cpu : 4
+  sample_mode       : 'mean'
+  base_action       : 'null'
+
+dmd:
+  horizon           : 16
+  init_cov          : 0.1
+  update_cov        : False
+  cov_type          : 'full'
+  beta              : 0.3
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  lam               : 0.2
+  num_cpu           : 8
+  particles_per_cpu : 4
+  sample_mode       : 'mean'
+  base_action       : 'null'
+
+pfmpc:
+  horizon           : 16
+  cov_shift         : 0.1
+  cov_resample      : 1.0
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  lam               : 0.6
+  num_cpu           : 8
+  particles_per_cpu : 4
+  sample_mode       : 'mean'
+  base_action       : 'null'
+
+
+softq:
+  horizon           : 16
+  max_iters         : 16
+  gamma             : 1.0
+  init_cov          : 1.0 
+  lam               : 0.1
+  lr                : 0.001
+  reg               : 0.001
+  num_grad_steps    : 1000
+  tol               : 0.0001
+  num_samples       : 500
+  # num_rollouts      : 1
+
+ilqr:
+  horizon           : 32
+  gamma             : 1.0
+  n_iters           : 1
+  num_cpu           : 1
+  sample_mode       : 'mean'

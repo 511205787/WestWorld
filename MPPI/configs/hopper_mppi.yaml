@@ -1,0 +1,57 @@
+# Hydra/OmegaConf config for hopper_mppi_expert_refcost_math.py
+# Usage:
+#   python hopper/hopper_mppi_expert_refcost_math.py --hydra-cfg configs/hopper_mppi.yaml
+
+env_name: Hopper-v2
+record_video: true
+video_dir: null            # null -> PROJECT_ROOT/output/hopper/{exp_name}
+exp_name: westworld_pretrained
+
+horizon: 100          # MPC horizon
+num_particles: 256    # sampling batch size, 512 origin, can be 64
+num_workers: null     # null -> min(32, cpu_count())
+step_iters: 1         # inner update loops per real step
+
+init_cov: 0.3         # diag covariance (scalar or list)
+filter_coeffs: [0.5, 0.5, 0.0]  # AR(2) noise smoothing
+lam: 0.5              # softmax temperature
+alpha: 0              # 1: ignore control cost, 0: include
+step_size: 0.4        # distribution mean update rate
+gamma: 1.0
+base_action: expert   # null | repeat | random | expert
+
+max_ep_len: 1000
+terminal_per_step_penalty: 10.0
+seed: 123
+deterministic_seed: true
+# expert init: none | dist (mean/std) | sequence (the first H action steps)
+expert_init_mode: dist
+expert_cov_scale: 0.8
+
+# expert reference cost
+use_ref_cost: true
+ref_pos_weight: 0.15
+ref_vel_weight: 0.15
+
+# world model toggle & paths
+use_world_model: true           # true -> use learned world model rollouts; false -> real sim rollouts
+wm_type: westworld               # westworld | trajmoe | mlpensemble | tdm | trajworld
+# westworld configs
+wm_ckpt: hopper/world_model_westworld/westworld.ckpt
+wm_cfg: hopper/world_model_westworld/WestWorld.yaml
+# trajworld configs
+# wm_ckpt: hopper/world_model_Trajworld/trajworld.ckpt
+# wm_cfg: hopper/world_model_Trajworld/Trajworld.yaml
+# tdm configs
+# wm_ckpt: hopper/world_model_TDM/TDM.ckpt
+# wm_cfg: hopper/world_model_TDM/tdm.yaml
+# MLP configs
+# wm_ckpt: hopper/world_model_MLPEnsemble/MLP.ckpt
+# wm_cfg: hopper/world_model_MLPEnsemble/MLPEnsemble.yaml
+
+wm_minmax: hopper/minmax_mppi_rollouts_hopper.pt
+wm_device: 1
+mppi_obs_dim: 12
+mppi_act_dim: 3
+wm_max_obs_dim: 37
+wm_max_act_dim: 12

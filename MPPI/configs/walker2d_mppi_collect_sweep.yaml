@@ -1,0 +1,12 @@
+# Hydra sweep config for walker2d_mppi_collect_pt.py
+# Usage:
+#   python walker2d/walker2d_mppi_collect_pt.py --config-name walker2d_mppi_collect_sweep
+
+defaults:
+  - walker2d_mppi_collect
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      seed: 123,125,128  # modify this to the seed list you need

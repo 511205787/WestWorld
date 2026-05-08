@@ -1,0 +1,22 @@
+# Hydra sweep config for world model checkpoints/types
+# Usage:
+#   python walker2d/walker2d_mppi_expert_refcost_world_model.py --config-name walker2d_mppi_world_model_sweep -m
+
+defaults:
+  - walker2d_mppi
+  - _self_
+
+exp_name: tdm_tfs
+wm_type: tdm
+wm_cfg: walker2d/world_model_TDM/tdm.yaml
+wm_device: 3
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      # NOTE: ckpt paths contain "=" so each entry is quoted.
+      # Pre-train
+      # 'walker2d/world_model_TDM/pretrain_ckpt/last.ckpt',
+      wm_ckpt: >-
+        'walker2d/world_model_TDM/tfs_ckpt/TDM.ckpt',

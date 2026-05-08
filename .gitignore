@@ -1,0 +1,26 @@
+.vscode
+*.jpg
+*.png
+*.gif
+**/__pycache__/
+# data
+data_samples
+outputs
+output
+tmp
+test
+wandb
+lightning_logs
+nohup
+CTFM
+pre_trained
+Trajworld_data
+dataset_h5
+Trajworld
+*.h5
+*.pt
+*.ckpt
+*.xlsx
+trajworld_ckpt
+scaling_dataset_h5_30env
+rclone.conf

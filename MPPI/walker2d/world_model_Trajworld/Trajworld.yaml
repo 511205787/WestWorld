@@ -1,0 +1,28 @@
+# common
+model_name: Trajworld
+
+# train
+epochs: 100 #150 #40
+lr: 1e-4
+total_steps: 1000000
+warmup_steps: 1000
+weight_decay: 1e-5
+val_every_n_steps: 1000
+
+train_batch_size: 28 #64 #128, for control 6, 28
+eval_batch_size: 128 #32 #128
+
+steps_per_epoch: 1
+
+resume_fixed_lr_mode: False
+finetune_few_params: False
+finetune_last_n_blocks: 6
+resume_fixed_lr: 1e-4 # 1e-5 for finetune, 1e-4 for train from scratch
+resume_extra_steps: 50000
+
+# resume_fixed_lr: 1e-6
+# resume_extra_steps: 200
+# data related
+# 300 for ur5, 300 for a1, 300 for cassie, 1500 for train from scratch
+
+

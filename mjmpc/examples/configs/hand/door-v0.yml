@@ -1,0 +1,69 @@
+env_name          : 'door-v0'
+n_episodes        : 10
+max_ep_length     : 200
+seed              : 123
+base_action       : 'null'
+render            : True
+job_mode          : 'sweep'
+exp_notes         : 'Opening a door with a 24-DOF Shadow Hand (Adroit).'
+
+random_shooting:
+  horizon           : 32
+  init_cov          : 0.1
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  num_cpu           : 10
+  particles_per_cpu : 10
+
+mppi:
+  horizon           : 32
+  init_cov          : 0.1
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  lam               : 0.1
+  alpha             : 1
+  num_cpu           : 10
+  particles_per_cpu : 10
+
+dmd:
+  horizon           : 32
+  init_cov          : 0.1
+  update_cov        : True
+  cov_type          : 'full'
+  beta              : 0.6
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 0.7
+  lam               : 0.1
+  num_cpu           : 10
+  particles_per_cpu : 10
+
+cem:
+  horizon           : 32
+  init_cov          : 0.1
+  cov_type          : 'full'
+  beta              : 0.1
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  step_size         : 1.0
+  elite_frac        : 0.2
+  num_cpu           : 10
+  particles_per_cpu : 10
+
+pfmpc:
+  horizon           : 32
+  cov_shift         : 0.55
+  cov_resample      : 1.0
+  filter_coeffs     : [0.25, 0.8, 0.0]
+  gamma             : 1.0
+  n_iters           : 1
+  lam               : 0.2
+  num_cpu           : 10
+  particles_per_cpu : 10
+
